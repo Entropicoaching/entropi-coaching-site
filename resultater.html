@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Resultater | Entropi Coaching</title>
-<meta name="description" content="Resultater fra atleter coached under Entropi Coaching: dansk mester 2026 i −84 kg senior, EM-guld i dødløft og dokumenterede præstationsfremgange.">
+<meta name="description" content="Regitze Lettings dokumenterede forløb under Entropi Coaching: dansk mester 2026, EM-guld i dødløft og tre danske seniorrekorder i −84 kg.">
 <meta property="og:title" content="Resultater | Entropi Coaching">
-<meta property="og:description" content="Resultater fra atleter coached under Entropi Coaching: dansk mester 2026 i −84 kg senior, EM-guld i dødløft og dokumenterede præstationsfremgange.">
+<meta property="og:description" content="Regitze Lettings dokumenterede forløb under Entropi Coaching: dansk mester 2026, EM-guld i dødløft og tre danske seniorrekorder i −84 kg.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -26,10 +26,13 @@
   .featured-result em { font-style: italic; color: var(--ink3); }
   .featured-class { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); margin-bottom: 1.75rem; }
   .featured-body { font-size: 0.92rem; color: var(--ink2); line-height: 1.85; margin-bottom: 2rem; }
-  .featured-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); margin-top: 1.5rem; }
+  .featured-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin-top: 1.5rem; }
   .f-stat { background: var(--bg3); padding: 1rem; }
   .f-stat-num { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); line-height: 1; margin-bottom: 0.25rem; }
   .f-stat-label { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink4); }
+  .profile-record { display: block; margin-top: .35rem; color: var(--amber); font-family: var(--mono); font-size: .5rem; letter-spacing: .08em; text-transform: uppercase; }
+  .profile-source { display: inline-flex; margin-top: 1.5rem; color: var(--ink3); font-family: var(--mono); font-size: .58rem; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; border-bottom: 1px solid var(--amber-dim); padding-bottom: .2rem; }
+  .profile-source:hover { color: var(--ink); }
 
   .press-ref { display: inline-block; margin-top: 1.5rem; font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink4); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 0.15rem; transition: color 0.15s; }
   .press-ref:hover { color: var(--ink3); }
@@ -42,6 +45,10 @@
   .result-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 0.4rem; }
   .result-class { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink4); margin-bottom: 1rem; }
   .result-body { font-size: 0.84rem; color: var(--ink3); line-height: 1.75; }
+  .other-results { background: var(--bg2); border-bottom: 1px solid var(--border); }
+  .other-results .results-grid { grid-template-columns: repeat(3, 1fr); }
+  .other-results .result-card { background: var(--bg2); }
+  .other-results .result-card:hover { background: var(--bg3); }
 
   .marc-results { background: var(--bg2); border-bottom: 1px solid var(--border); }
   .marc-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
@@ -60,7 +67,9 @@
     .featured-inner { grid-template-columns: 1fr; gap: 0; }
     .featured-content { padding: 2rem 1.5rem 1rem; }
     .featured-media { width: min(12rem, calc(100% - 3rem)); margin: 0 1.5rem 2rem; }
+    .featured-stats { grid-template-columns: repeat(2, 1fr); }
     .results-grid { grid-template-columns: 1fr; }
+    .other-results .results-grid { grid-template-columns: 1fr; }
     .marc-inner { grid-template-columns: 1fr; gap: 3rem; }
   }
 </style>
@@ -99,45 +108,77 @@
     <p class="page-eyebrow">Resultater</p>
     <h1 class="page-h1">Præstationer<br><em>på platformen.</em></h1>
   </div>
-  <p class="page-intro">Resultater fra atleter coached under Entropi og fra Marc selv som konkurrenceløfter. Navne holdes private med respekt for atleternes privatliv.</p>
+  <p class="page-intro">Et dokumenteret atletforløb med nationale rekorder og internationale stævner. Øvrige resultater fra Entropi-atleter står separat nedenunder.</p>
 </div>
 
-<!-- FEATURED -->
-<section class="featured">
-  <p class="section-eyebrow reveal">Seneste resultat</p>
+<!-- REGITZE PROFILE -->
+<section class="featured" id="regitze">
+  <p class="section-eyebrow reveal">Atletprofil</p>
   <div class="featured-inner reveal">
     <div class="featured-content">
-      <div class="featured-tag">DM &amp; EM · 2026</div>
-      <div class="featured-result">Dansk mester.<br><em>EM-guld i dødløft.</em></div>
-      <div class="featured-class">Kvinder · −84 kg · Senior</div>
-      <p class="featured-body">En Entropi-atlet blev dansk mester i −84 kg senior og tog guld i dødløft med 240 kg ved EM i Malta. To resultater fra samme års systematiske tekniske arbejde, programmering og konkurrencestyring.</p>
+      <div class="featured-tag">Atletprofil · Roskilde AK</div>
+      <h2 class="featured-result">Regitze Letting.<br><em>−84 kg senior.</em></h2>
+      <div class="featured-class">Klassisk styrkeløft · 2024–2026</div>
+      <p class="featured-body">Regitze har løftet sin total fra 465 kg ved SM i 2024 til 547,5 kg ved EM i marts 2026. Ved EM blev hun nummer fem samlet, vandt guld i dødløft og satte danske seniorrekorder i squat, dødløft og total.</p>
       <div class="featured-stats">
-        <div class="f-stat"><div class="f-stat-num">DM</div><div class="f-stat-label">Guld · senior</div></div>
-        <div class="f-stat"><div class="f-stat-num">240 kg</div><div class="f-stat-label">EM-dødløft</div></div>
-        <div class="f-stat"><div class="f-stat-num">−84 kg</div><div class="f-stat-label">Vægtklasse</div></div>
+        <div class="f-stat"><div class="f-stat-num">195 kg</div><div class="f-stat-label">Squat<span class="profile-record">Dansk rekord</span></div></div>
+        <div class="f-stat"><div class="f-stat-num">112,5 kg</div><div class="f-stat-label">Bænkpres</div></div>
+        <div class="f-stat"><div class="f-stat-num">240 kg</div><div class="f-stat-label">Dødløft<span class="profile-record">Dansk rekord</span></div></div>
+        <div class="f-stat"><div class="f-stat-num">547,5 kg</div><div class="f-stat-label">Total<span class="profile-record">Dansk rekord</span></div></div>
       </div>
+      <a class="profile-source" href="https://styrke.dk/?dbid=profil&amp;licnum=5077" target="_blank" rel="noopener">Se dokumenterede resultater på Styrke.dk →</a>
     </div>
     <figure class="featured-media">
       <img src="assets/regitze-em-2026-medalje.jpg" alt="Medaljeoverrækkelse ved EM 2026 i Malta" loading="lazy">
-      <figcaption>EM 2026 · Malta</figcaption>
+      <figcaption>Regitze Letting · EM · Malta · marts 2026</figcaption>
     </figure>
   </div>
 </section>
 <section class="all-results">
-  <p class="section-eyebrow reveal">Resultatarkiv</p>
+  <h2 class="section-eyebrow reveal">Regitzes stævneforløb</h2>
   <div class="results-grid reveal">
     <div class="result-card">
-      <div class="result-tag">DSF · DM 2026</div>
-      <div class="result-title">Dansk mester</div>
+      <div class="result-tag">DM Klassisk Open · 28. juni 2026</div>
+      <div class="result-title">1.-plads · 522,5 kg</div>
       <div class="result-class">Kvinder · −84 kg · Senior</div>
-      <p class="result-body">DM-guld i seniorrækken under Entropi Coaching.</p>
+      <p class="result-body">190 kg squat, 102,5 kg bænkpres og 230 kg dødløft. Dansk mester otte dage efter VM.</p>
     </div>
     <div class="result-card">
-      <div class="result-tag">EPF · EM 2026 · Malta</div>
-      <div class="result-title">EM-guld i dødløft</div>
-      <div class="result-class">Kvinder · -84 kg · Åben</div>
-      <p class="result-body">Guldmedalje i dødløft med 240 kg ved EM i Malta.</p>
+      <div class="result-tag">IPF · VM · 13.–21. juni 2026</div>
+      <div class="result-title">16.-plads · 520 kg</div>
+      <div class="result-class">Kvinder · −84 kg · Senior</div>
+      <p class="result-body">187,5 kg squat, 102,5 kg bænkpres og 230 kg dødløft ved VM i Litauen.</p>
     </div>
+    <div class="result-card">
+      <div class="result-tag">EPF · EM · 21. marts 2026</div>
+      <div class="result-title">5.-plads · 547,5 kg</div>
+      <div class="result-class">Kvinder · −84 kg · Senior</div>
+      <p class="result-body">EM-guld i dødløft med 240 kg. Danske seniorrekorder i squat med 195 kg, dødløft med 240 kg og total med 547,5 kg.</p>
+    </div>
+    <div class="result-card">
+      <div class="result-tag">SM Klassisk · 6. september 2025</div>
+      <div class="result-title">1.-plads · 533,5 kg</div>
+      <div class="result-class">Kvinder · −84 kg · Senior</div>
+      <p class="result-body">193 kg squat, 110 kg bænkpres og 230,5 kg dødløft. Et tydeligt skridt fra 2024-sæsonen mod EM-resultatet.</p>
+    </div>
+    <div class="result-card">
+      <div class="result-tag">DM Klassisk Open · 2025</div>
+      <div class="result-title">2.-plads · 515 kg</div>
+      <div class="result-class">Kvinder · −84 kg · Senior</div>
+      <p class="result-body">190 kg squat, 100 kg bænkpres og 225 kg dødløft.</p>
+    </div>
+    <div class="result-card">
+      <div class="result-tag">SM Klassisk · 2024</div>
+      <div class="result-title">1.-plads · 465 kg</div>
+      <div class="result-class">Kvinder · −84 kg · Senior</div>
+      <p class="result-body">172,5 kg squat, 97,5 kg bænkpres og 195 kg dødløft. Udgangspunktet for den viste udvikling.</p>
+    </div>
+  </div>
+</section>
+
+<section class="other-results" id="andre-atleter">
+  <h2 class="section-eyebrow reveal">Andre Entropi-atleter</h2>
+  <div class="results-grid reveal">
     <div class="result-card">
       <div class="result-tag">DM · 2024</div>
       <div class="result-title">Dansk sub-juniormester</div>
