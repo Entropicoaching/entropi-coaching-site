@@ -50,19 +50,6 @@
   .other-results .result-card { background: var(--bg2); }
   .other-results .result-card:hover { background: var(--bg3); }
 
-  .marc-results { background: var(--bg2); border-bottom: 1px solid var(--border); }
-  .marc-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-  .marc-heading { font-family: var(--serif); font-size: clamp(1.9rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1.1; color: var(--ink); margin-bottom: 1.25rem; }
-  .marc-heading em { font-style: italic; color: var(--ink3); }
-  .marc-body { font-size: 0.93rem; color: var(--ink2); line-height: 1.9; margin-bottom: 1rem; }
-  .marc-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin-top: 1.5rem; }
-  .m-stat { background: var(--bg2); padding: 1.5rem; }
-  .m-stat-num { font-family: var(--serif); font-size: 2rem; color: var(--ink); line-height: 1; margin-bottom: 0.3rem; }
-  .m-stat-num sup { font-size: 0.85rem; color: var(--amber); vertical-align: super; }
-  .m-stat-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); }
-  .marc-img { width: 100%; max-height: 380px; object-fit: cover; object-position: center 20%; display: block; filter: brightness(0.85); border: 1px solid var(--border2); }
-  .marc-caption { padding: 0.6rem 1rem; background: var(--bg3); border: 1px solid var(--border); border-top: none; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); }
-
   @media (max-width: 900px) {
     .featured-inner { grid-template-columns: 1fr; gap: 0; }
     .featured-content { padding: 2rem 1.5rem 1rem; }
@@ -70,7 +57,6 @@
     .featured-stats { grid-template-columns: repeat(2, 1fr); }
     .results-grid { grid-template-columns: 1fr; }
     .other-results .results-grid { grid-template-columns: 1fr; }
-    .marc-inner { grid-template-columns: 1fr; gap: 3rem; }
   }
 </style>
 <link rel="canonical" href="https://entropicoaching.dk/resultater.html">
@@ -196,28 +182,6 @@
       <div class="result-title">Guld i bænkpres</div>
       <div class="result-class">M2</div>
       <p class="result-body">DM-guld i bænkpres under Entropi Coaching.</p>
-    </div>
-  </div>
-</section>
-
-<!-- MARC'S OWN RESULTS -->
-<section class="marc-results">
-  <div class="marc-inner">
-    <div>
-      <p class="section-eyebrow reveal">Som løfter</p>
-      <h2 class="marc-heading reveal">12 år på<br><em>platformen.</em></h2>
-      <p class="marc-body reveal">Foruden coaching har Marc konkurreret aktivt i styrkeløft siden han var 16. Den personlige erfaring fra platformen er integreret i coaching-tilgangen. Det er svært at forstå hvad en atlet gennemgår uden selv at have stået der.</p>
-      <p class="marc-body reveal">Højdepunktet kom i 2021 med guld i bænkpres ved junior-DM som 22-årig, efter seks år med systematisk teknik- og programmeringsarbejde.</p>
-      <div class="marc-stats">
-        <div class="m-stat"><div class="m-stat-num">1<sup>st</sup></div><div class="m-stat-label">DM-guld bænkpres, junior</div></div>
-        <div class="m-stat"><div class="m-stat-num">12<sup>+</sup></div><div class="m-stat-label">Års konkurrenceerfaring</div></div>
-        <div class="m-stat"><div class="m-stat-num">2021</div><div class="m-stat-label">Nationale mesterskaber</div></div>
-        <div class="m-stat"><div class="m-stat-num">22</div><div class="m-stat-label">Alder ved titlen</div></div>
-      </div>
-    </div>
-    <div class="reveal">
-      <img src="IMG_7935.jpg" alt="Marc Schlichting ved nationale mesterskaber" class="marc-img" loading="lazy">
-      <div class="marc-caption">Marc Schlichting · DM-guld i bænkpres, junior · 2021</div>
     </div>
   </div>
 </section>
