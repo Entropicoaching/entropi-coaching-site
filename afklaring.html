@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="da">
 <head>
   <meta charset="utf-8">
@@ -16,6 +16,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#141410">
   <style>
     .clarify-hero { padding: 8.5rem 2.5rem 4rem; border-bottom: 1px solid var(--border); background: linear-gradient(115deg, var(--bg) 0%, var(--bg2) 100%); }
     .clarify-inner { max-width: 980px; margin: 0 auto; }
@@ -45,9 +47,18 @@
 <body>
   <nav>
     <a href="index.html" class="nav-logo">Entropi<span>.</span></a>
-    <ul class="nav-links"><li><a href="coaching.html" class="active">Coaching</a></li><li><a href="viden.html">Viden</a></li><li><a href="om.html">Om Entropi</a></li></ul>
+    <ul class="nav-links"><li><a href="coaching.html" class="active">Coaching</a></li><li><a href="resultater.html">Resultater</a></li><li><a href="viden.html">Viden</a></li><li><a href="om.html">Om Entropi</a></li></ul>
+    <button class="nav-hamburger" type="button" aria-label="Menu"><span></span><span></span><span></span></button>
     <a href="coaching.html#ansoeg" class="nav-cta">Ansøg om coaching</a>
   </nav>
+  <div class="mobile-menu">
+    <a href="coaching.html">Coaching</a>
+    <a href="resultater.html">Resultater</a>
+    <a href="viden.html">Viden</a>
+    <a href="om.html">Om Entropi</a>
+    <a href="https://app.entropicoaching.dk">Portal</a>
+    <a href="coaching.html#ansoeg" class="nav-cta">Ansøg om coaching</a>
+  </div>
   <main>
     <header class="clarify-hero">
       <div class="clarify-inner">
@@ -72,6 +83,7 @@
       <aside class="clarify-decision"><div><h2>Har du en konkret situation,<br><em>der fortjener en ordentlig vurdering?</em></h2><p>Læs om samarbejdet og brug ansøgningen, hvis du kan se dig selv i arbejdsformen.</p></div><a class="btn-primary" href="coaching.html#ansoeg">Se coachingansøgning</a></aside>
     </div>
   </main>
-  <footer><div><div class="footer-logo">Entropi<span>.</span></div><div class="footer-tagline">Systematisk styrke · data, disciplin &amp; dybde</div></div><ul class="footer-links"><li><a href="coaching.html">Coaching</a></li><li><a href="viden.html">Viden</a></li><li><a href="om.html">Om Entropi</a></li></ul><div class="footer-contact"><div>Marc Schlichting</div><a href="mailto:coach@entropicoaching.dk">coach@entropicoaching.dk</a></div></footer>
+  <footer><div><div class="footer-logo">Entropi<span>.</span></div><div class="footer-tagline">Systematisk styrke · data, disciplin &amp; dybde</div></div><ul class="footer-links"><li><a href="coaching.html">Coaching</a></li><li><a href="resultater.html">Resultater</a></li><li><a href="viden.html">Viden</a></li><li><a href="om.html">Om Entropi</a></li></ul><div class="footer-contact"><div>Marc Schlichting</div><a href="mailto:coach@entropicoaching.dk">coach@entropicoaching.dk</a><div class="footer-meta">Entropi Coaching · CVR 46684443<br><a href="privatliv.html">Privatliv</a> · © 2026</div></div></footer>
+  <script src="main.js"></script>
 </body>
 </html>

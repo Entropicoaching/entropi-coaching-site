@@ -11,6 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#141410">
 <style>
   /* ---- COACHING-SPECIFIC ---- */
   .offers { padding: 5rem 2.5rem; border-bottom: 1px solid var(--border); background: var(--bg2); }
@@ -84,6 +86,8 @@
   .btn-submit::after { content: '>'; font-family: var(--mono); }
   .form-error { margin-top: 1px; padding: 1rem 1.25rem; border: 1px solid #8f5148; background: #2d201d; color: #f0d4cf; font-size: 0.82rem; line-height: 1.6; }
   .form-error[hidden] { display: none; }
+  .form-privacy { margin-top: 1rem; color: var(--ink3); font-size: 0.76rem; line-height: 1.7; }
+  .form-privacy a { color: var(--ink2); text-underline-offset: 0.2rem; }
   .form-success { display: none; padding: 2.5rem; background: var(--bg3); border: 1px solid var(--border2); text-align: center; }
   .form-success p { font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--ink2); }
 
@@ -128,6 +132,8 @@
 </head>
 <body style="background:#141410;color:#edeae2;">
 
+<a class="skip-link" href="#main-content">Spring til indhold</a>
+
 <nav>
   <a href="index.html" class="nav-logo">Entropi<span>.</span></a>
   <ul class="nav-links">
@@ -136,7 +142,7 @@
     <li><a href="viden.html">Viden</a></li>
     <li><a href="om.html">Om Entropi</a></li>
   </ul>
-  <button class="nav-hamburger" aria-label="Menu">
+  <button class="nav-hamburger" type="button" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
   <a href="#ansoeg" class="nav-cta">Ansøg om coaching</a>
@@ -150,6 +156,7 @@
   <a href="coaching.html#ansoeg" class="nav-cta">Ansøg om coaching</a>
 </div>
 
+<main id="main-content">
 <div class="page-header">
   <div>
     <p class="page-eyebrow">Coaching</p>
@@ -264,22 +271,27 @@
       <p class="form-note reveal">Ansøgninger besvares inden for 2-4 hverdage. Jeg er selektiv, ikke alle ansøgninger resulterer i et samarbejde, men alle får et svar.</p>
     </div>
 
-    <div id="form-success" class="form-success" role="status" tabindex="-1">
-      <p>Tak for din ansøgning. Jeg vender tilbage snarest.</p>
+    <div id="form-success" class="form-success" role="status" aria-live="polite" tabindex="-1">
+      <p>Tak. Jeg har modtaget din ansøgning og vender tilbage inden for 2-4 hverdage.</p>
     </div>
 
     <form class="form reveal" id="coaching-form"
       action="https://formspree.io/f/xaqlqzqb"
       method="POST">
 
+      <input type="hidden" name="_subject" value="Ny coachingansøgning fra entropicoaching.dk">
+      <label class="hp-field" aria-hidden="true">Lad dette felt stå tomt
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+      </label>
+
       <div class="field-row">
         <div class="field">
           <label for="navn">Navn</label>
-          <input type="text" id="navn" name="navn" placeholder="Dit fulde navn" required>
+          <input type="text" id="navn" name="navn" placeholder="Dit fulde navn" autocomplete="name" required>
         </div>
         <div class="field">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="din@email.dk" required>
+          <input type="email" id="email" name="email" placeholder="din@email.dk" autocomplete="email" inputmode="email" required>
         </div>
       </div>
 
@@ -359,15 +371,18 @@
       <div class="form-submit">
         <button type="submit" class="btn-submit">Send ansøgning</button>
       </div>
+      <p class="form-privacy">Jeg bruger oplysningerne til at vurdere og besvare din ansøgning. Undlad CPR-nummer og følsomme helbredsoplysninger i den første henvendelse. <a href="privatliv.html">Læs om behandling af personoplysninger.</a></p>
       <div id="form-error" class="form-error" role="alert" tabindex="-1" hidden>Noget gik galt. Prøv igen eller send en email til coach@entropicoaching.dk</div>
     </form>
   </div>
 </section>
 
+</main>
+
 <footer>
   <div>
     <div class="footer-logo">Entropi<span>.</span></div>
-    <div class="footer-tagline">Systematisk styrke · data, disciplin & dybde</div>
+    <div class="footer-tagline">Systematisk styrke · data, disciplin &amp; dybde</div>
   </div>
   <ul class="footer-links">
     <li><a href="coaching.html">Coaching</a></li>
@@ -380,7 +395,7 @@
   <div class="footer-contact">
     <div>Marc Schlichting</div>
     <a href="mailto:coach@entropicoaching.dk">coach@entropicoaching.dk</a>
-    <div style="margin-top:0.4rem;font-size:0.62rem;color:var(--ink4);">© 2025 Entropi Coaching</div>
+    <div class="footer-meta">Entropi Coaching · CVR 46684443<br><a href="privatliv.html">Privatliv</a> · © 2026</div>
   </div>
 </footer>
 

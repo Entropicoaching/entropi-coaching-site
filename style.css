@@ -28,6 +28,27 @@ body {
   line-height: 1.6; overflow-x: hidden;
 }
 
+/* Keyboard users should always be able to see where they are. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed; top: 0; left: 1rem; z-index: 400;
+  transform: translateY(-140%);
+  background: var(--amber); color: var(--bg);
+  padding: 0.75rem 1rem;
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+}
+.skip-link:focus { transform: translateY(0); }
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
 /* ---- NAV ---- */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
@@ -155,12 +176,24 @@ footer {
 .footer-contact { text-align: right; font-size: 0.82rem; color: var(--ink3); line-height: 1.8; }
 .footer-contact a { color: var(--ink2); text-decoration: none; transition: color 0.15s; }
 .footer-contact a:hover { color: var(--ink); }
+.footer-meta { margin-top: 0.45rem; color: var(--ink4); font-size: 0.68rem; line-height: 1.7; }
+.footer-meta a { color: var(--ink3); text-decoration: underline; text-decoration-color: var(--border2); text-underline-offset: 0.2rem; }
 
 /* ---- ANIMATIONS ---- */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
 
 /* ---- CTA SECTION (reused) ---- */
 .cta-section {

@@ -11,6 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#141410">
 <style>
   /* ---- PROGRAMMER-SPECIFIC ---- */
   .programs { background: var(--bg2); border-bottom: 1px solid var(--border); }
@@ -53,6 +55,10 @@
   .optin-btn { background: var(--amber); color: var(--bg); border: none; cursor: pointer; font-family: var(--mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0 1.5rem; transition: opacity 0.15s; white-space: nowrap; }
   .optin-btn:hover { opacity: 0.88; }
   .optin-success { display: none; font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--ink2); }
+  .optin-privacy { max-width: 520px; margin-top: 0.9rem; color: var(--ink3); font-size: 0.74rem; line-height: 1.7; }
+  .optin-privacy a { color: var(--ink2); text-underline-offset: 0.2rem; }
+  .optin-error { max-width: 460px; margin-top: 0.75rem; color: #f0d4cf; font-size: 0.78rem; line-height: 1.6; }
+  .optin-error[hidden] { display: none; }
 
   @media (max-width: 900px) {
     .programs-grid { grid-template-columns: 1fr; }
@@ -76,7 +82,7 @@
     <li><a href="viden.html" class="active">Viden</a></li>
     <li><a href="om.html">Om Entropi</a></li>
   </ul>
-  <button class="nav-hamburger" aria-label="Menu">
+  <button class="nav-hamburger" type="button" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
   <a href="coaching.html#ansoeg" class="nav-cta">Ansøg om coaching</a>
@@ -144,7 +150,7 @@
     <div class="how-to-step">
       <div class="how-to-num">02</div>
       <div class="how-to-title">Lav en kopi</div>
-      <div class="how-to-body">Klik "Filer" > "Opret en kopi" i Google Sheets. Nu har du din egen version du kan redigere.</div>
+      <div class="how-to-body">Klik "Filer" &gt; "Opret en kopi" i Google Sheets. Nu har du din egen version du kan redigere.</div>
     </div>
     <div class="how-to-step">
       <div class="how-to-num">03</div>
@@ -163,10 +169,13 @@
     <form class="optin-form" id="optin-form" action="https://formspree.io/f/xaqlqzqb" method="POST">
       <input type="hidden" name="_subject" value="Ny mail-tilmelding (gratis programmer)">
       <input type="hidden" name="kilde" value="Gratis programmer / hold mig opdateret">
-      <input type="email" name="email" required placeholder="Din mail" aria-label="Din mail" class="optin-input">
+      <input class="hp-field" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="email" name="email" required placeholder="Din mail" aria-label="Din mail" autocomplete="email" inputmode="email" class="optin-input">
       <button type="submit" class="optin-btn">Tilmeld</button>
     </form>
-    <p class="optin-success" id="optin-success">Tak. Så hører du fra mig, når der er nyt.</p>
+    <p class="optin-privacy">Når du tilmelder dig, beder du om mails om nye programmer og artikler. Du kan altid afmelde dig igen. <a href="privatliv.html">Læs om behandling af personoplysninger.</a></p>
+    <p class="optin-success" id="optin-success" role="status" aria-live="polite" tabindex="-1">Tak. Så hører du fra mig, når der er nyt.</p>
+    <p class="optin-error" id="optin-error" role="alert" tabindex="-1" hidden>Noget gik galt. Prøv igen eller skriv til coach@entropicoaching.dk.</p>
   </div>
 </section>
 
@@ -183,7 +192,7 @@
 <footer>
   <div>
     <div class="footer-logo">Entropi<span>.</span></div>
-    <div class="footer-tagline">Systematisk styrke · data, disciplin & dybde</div>
+    <div class="footer-tagline">Systematisk styrke · data, disciplin &amp; dybde</div>
   </div>
   <ul class="footer-links">
     <li><a href="coaching.html">Coaching</a></li>
@@ -196,21 +205,42 @@
   <div class="footer-contact">
     <div>Marc Schlichting</div>
     <a href="mailto:coach@entropicoaching.dk">coach@entropicoaching.dk</a>
-    <div style="margin-top:0.4rem;font-size:0.62rem;color:var(--ink4);">© 2025 Entropi Coaching</div>
+    <div class="footer-meta">Entropi Coaching · CVR 46684443<br><a href="privatliv.html">Privatliv</a> · © 2026</div>
   </div>
 </footer>
 
 <script>
   (function(){
-    var f=document.getElementById('optin-form'); var ok=document.getElementById('optin-success');
+    var f=document.getElementById('optin-form');
+    var ok=document.getElementById('optin-success');
+    var error=document.getElementById('optin-error');
+    var button=f && f.querySelector('button[type="submit"]');
+    var sending=false;
     if(!f) return;
     f.addEventListener('submit', async function(e){
       e.preventDefault();
+      if(sending) return;
+      sending=true;
+      button.disabled=true;
+      f.setAttribute('aria-busy','true');
+      error.hidden=true;
+      var controller=new AbortController();
+      var timeoutId=setTimeout(function(){ controller.abort(); },15000);
       try{
-        var res=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}});
-        if(res.ok){ f.style.display='none'; ok.style.display='block'; }
-        else { alert('Noget gik galt. Pr\u00f8v igen eller skriv til coach@entropicoaching.dk'); }
-      }catch(err){ alert('Noget gik galt. Pr\u00f8v igen eller skriv til coach@entropicoaching.dk'); }
+        var res=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'},signal:controller.signal});
+        if(!res.ok) throw new Error('request_failed');
+        f.style.display='none';
+        ok.style.display='block';
+        ok.focus();
+      }catch(err){
+        error.hidden=false;
+        error.focus();
+      }finally{
+        clearTimeout(timeoutId);
+        f.removeAttribute('aria-busy');
+        button.disabled=false;
+        sending=false;
+      }
     });
   })();
 </script>
