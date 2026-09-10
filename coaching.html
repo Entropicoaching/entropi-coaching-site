@@ -102,7 +102,7 @@
   .platform-read:hover::after { transform: translateX(3px); }
   .platform-read:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
   .platform-visual { margin: 0; border: 1px solid var(--border2); background: var(--bg2); }
-  .platform-visual img { width: 100%; display: block; }
+  .platform-visual img { width: 100%; height: auto; display: block; }
   .platform-visual figcaption { padding: .7rem .9rem; border-top: 1px solid var(--border); color: var(--ink3); font-family: var(--mono); font-size: .56rem; letter-spacing: .08em; text-transform: uppercase; line-height: 1.5; }
 
   .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin-top: 2.5rem; }
@@ -211,7 +211,10 @@
       <a class="platform-read" href="artikel-hvad-laver-en-coach.html">Læs hvad der sker mellem dine check-ins</a>
     </div>
     <figure class="platform-visual reveal">
-      <img src="assets/entropi-app-anonymiseret.png" alt="Anonymiseret eksempel på Entropi-appens overblik med træningsudvikling, volumen og videocoach" loading="lazy">
+      <picture>
+        <source srcset="assets/entropi-app-anonymiseret.webp" type="image/webp">
+        <img src="assets/entropi-app-anonymiseret.png" alt="Anonymiseret eksempel på Entropi-appens overblik med træningsudvikling, volumen og videocoach" loading="lazy" width="1000" height="1321">
+      </picture>
       <figcaption>Entropi-appen · eksempel på overblik, træningsdata og videocoach</figcaption>
     </figure>
   </div>
@@ -440,6 +443,6 @@
     }
   });
 </script>
-<div class="mobile-cta-bar"><a href="#ansoeg">Ansøg om coaching</a></div>
+<div class="mobile-cta-bar" role="region" aria-label="Hurtig handling"><a href="#ansoeg">Ansøg om coaching</a></div>
 </body>
 </html>

@@ -90,7 +90,7 @@
   .competition { background: var(--bg2); border-bottom: 1px solid var(--border); }
   .competition-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
   .competition-img-wrap { position: relative; }
-  .competition-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; display: block; filter: brightness(0.85); border: 1px solid var(--border2); }
+  .competition-img { width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; object-position: center top; display: block; filter: brightness(0.85); border: 1px solid var(--border2); }
   .competition-caption { padding: 0.6rem 1rem; background: var(--bg3); border: 1px solid var(--border); border-top: none; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); }
   .competition-heading { font-family: var(--serif); font-size: clamp(1.9rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1.1; color: var(--ink); margin-bottom: 1.25rem; }
   .competition-heading em { font-style: italic; color: var(--ink3); }
@@ -128,7 +128,7 @@
   .about { background: var(--bg); border-bottom: 1px solid var(--border); }
   .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
   .about-img-wrap { position: relative; }
-  .about-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center top; display: block; filter: brightness(0.85); border: 1px solid var(--border2); }
+  .about-img { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; object-position: center top; display: block; filter: brightness(0.85); border: 1px solid var(--border2); }
   .about-caption { padding: 0.6rem 1rem; background: var(--bg2); border: 1px solid var(--border); border-top: none; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); }
   .about-heading { font-family: var(--serif); font-size: clamp(1.9rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.25rem; }
   .about-heading em { font-style: italic; color: var(--ink3); }
@@ -258,7 +258,10 @@
     </div>
   </div>
   <div class="hero-right">
-    <img src="IMG_9985.PNG" alt="Marc Schlichting ved IPF Europamesterskab" class="hero-img" loading="eager">
+    <picture>
+      <source srcset="IMG_9985.webp" type="image/webp">
+      <img src="IMG_9985.PNG" alt="Marc Schlichting ved IPF Europamesterskab" class="hero-img" loading="eager" width="922" height="2000">
+    </picture>
     <div class="hero-overlay"></div>
   </div>
 </div>
@@ -387,7 +390,10 @@
 <section class="competition" id="staevne">
   <div class="competition-inner">
     <div class="competition-img-wrap reveal">
-      <img src="IMG_9902.jpg" alt="Marc Schlichting og atlet ved EPF Europamesterskabet 2025" class="competition-img" loading="lazy">
+      <picture>
+        <source srcset="IMG_9902.webp" type="image/webp">
+        <img src="IMG_9902.jpg" alt="Marc Schlichting og atlet ved EPF Europamesterskabet 2025" class="competition-img" loading="lazy" width="1500" height="2000">
+      </picture>
       <div class="competition-caption">EPF Europamesterskab 2025 · Coached af Marc Schlichting</div>
     </div>
     <div>
@@ -449,7 +455,10 @@
 <section class="about" id="om">
   <div class="about-inner">
     <div class="about-img-wrap reveal">
-      <img src="IMG_7935.jpg" alt="Marc Schlichting" class="about-img" loading="lazy">
+      <picture>
+        <source srcset="IMG_7935.webp" type="image/webp">
+        <img src="IMG_7935.jpg" alt="Marc Schlichting" class="about-img" loading="lazy" width="826" height="849">
+      </picture>
       <div class="about-caption">Marc Schlichting · DM-guld i bænkpres, junior · 2021</div>
     </div>
     <div>
@@ -486,6 +495,6 @@
 </footer>
 
 <script src="main.js"></script>
-<div class="mobile-cta-bar"><a href="coaching.html#ansoeg">Ansøg om coaching</a></div>
+<div class="mobile-cta-bar" role="region" aria-label="Hurtig handling"><a href="coaching.html#ansoeg">Ansøg om coaching</a></div>
 </body>
 </html>
