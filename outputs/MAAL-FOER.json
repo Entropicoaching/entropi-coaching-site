@@ -1,0 +1,404 @@
+[
+  {
+    "page": "afklaring.html",
+    "weight": {
+      "totalKb": 187,
+      "largest": null,
+      "title": "Afklaring | Entropi Coaching",
+      "desc": "Et roligt første skridt til at afklare, om coaching er det rigtige næste skridt for din træning.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 2
+      }
+    ],
+    "lh": {
+      "performance": 89,
+      "accessibility": 95,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "artikel-autoregulering.html",
+    "weight": {
+      "totalKb": 166,
+      "largest": null,
+      "title": "Fatigue er ikke manglende fremgang | Entropi Coaching",
+      "desc": "Du har løftet de samme kilo i tre uger. Er det fatigue eller reel stagnation? Forstå forskellen, og hvordan autoregulering hjælper dig videre.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 15
+      }
+    ],
+    "lh": {
+      "performance": 88,
+      "accessibility": 89,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "artikel-deload.html",
+    "weight": {
+      "totalKb": 152,
+      "largest": null,
+      "title": "Deload: hvornår giver det faktisk mening? | Entropi Coaching",
+      "desc": "Hvad er en deload, hvornår giver den mening, og hvordan kan den tilpasses uden at gøre en lettere uge til en fast regel?",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 6
+      }
+    ],
+    "lh": {
+      "performance": 88,
+      "accessibility": 92,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "artikel-frekvens.html",
+    "weight": {
+      "totalKb": 153,
+      "largest": null,
+      "title": "Frekvens: den undervurderede variabel | Entropi Coaching",
+      "desc": "Frekvens afgør ikke bare hvor ofte du træner, men kvaliteten af hvert sæt. Forstå hvorfor frekvens er en undervurderet variabel i styrkeløft.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 15
+      }
+    ],
+    "lh": {
+      "performance": 88,
+      "accessibility": 89,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "artikel-hvad-laver-en-coach.html",
+    "weight": {
+      "totalKb": 151,
+      "largest": null,
+      "title": "Hvad laver en styrkeløft-coach egentlig? | Entropi Coaching",
+      "desc": "Et program er kun begyndelsen. Se hvordan video, træningslog, historik og samtale bliver til bedre beslutninger i et coachingforløb.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 6
+      }
+    ],
+    "lh": {
+      "performance": 88,
+      "accessibility": 95,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "artikel-intensitet.html",
+    "weight": {
+      "totalKb": 153,
+      "largest": null,
+      "title": "Intensitet: hvad det betyder og hvorfor det ikke handler om hvor hårdt det føles | Entropi Coaching",
+      "desc": "Intensitet er et præcist begreb i styrketræning, men bruges ofte upræcist. Forstå hvad intensitet virkelig betyder, og hvorfor det ikke handler om følelsen.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 15
+      }
+    ],
+    "lh": {
+      "performance": 88,
+      "accessibility": 89,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "artikel-volumen.html",
+    "weight": {
+      "totalKb": 155,
+      "largest": null,
+      "title": "Volumen: hvad det er, hvad det gør, og hvornår mere ikke er bedre | Entropi Coaching",
+      "desc": "Volumen er den mest omtalte og mest misforståede variabel i styrketræning. Forstå hvad volumen er, hvad den gør, og hvornår mere ikke er bedre.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 17
+      }
+    ],
+    "lh": {
+      "performance": 88,
+      "accessibility": 92,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "artikler.html",
+    "weight": {
+      "totalKb": 186,
+      "largest": null,
+      "title": "Viden | Entropi Coaching",
+      "desc": "Artikler og gratis programmer om styrkeløft-træning: volumen, intensitet, frekvens og autoregulering. Evidensbaseret viden fra Entropi Coaching.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 7
+      }
+    ],
+    "lh": {
+      "performance": 89,
+      "accessibility": 93,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "coaching.html",
+    "weight": {
+      "totalKb": 1135,
+      "largest": {
+        "fil": "assets/entropi-app-anonymiseret.png",
+        "kb": 947
+      },
+      "title": "Coaching | Entropi Coaching",
+      "desc": "Individuel styrkeløft-coaching: online programmering, videoanalyse, stævnecoaching og in-person træning i Roskilde. Ansøg om et coaching-samarbejde.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 2
+      }
+    ],
+    "lh": {
+      "performance": 88,
+      "accessibility": 96,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "index.html",
+    "weight": {
+      "totalKb": 624,
+      "largest": {
+        "fil": "IMG_9902.jpg",
+        "kb": 261
+      },
+      "title": "Entropi Coaching | Systematisk Styrkeløft-Coaching",
+      "desc": "Individuel styrkeløft-coaching med programmering, videoanalyse og løbende vurdering. For løftere fra første stævne til international scene.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 7
+      }
+    ],
+    "lh": {
+      "performance": 86,
+      "accessibility": 96,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "om.html",
+    "weight": {
+      "totalKb": 410,
+      "largest": {
+        "fil": "IMG_9932.PNG",
+        "kb": 229
+      },
+      "title": "Om Entropi | Entropi Coaching",
+      "desc": "Om Entropi Coaching og Marc Schlichting: matematiklærer, DM-guldvinder i bænkpres (junior) og styrkeløft-coach med 8+ års erfaring. Læs om baggrunden og filosofien.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 3
+      }
+    ],
+    "lh": {
+      "performance": 87,
+      "accessibility": 93,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "privatliv.html",
+    "weight": {
+      "totalKb": 168,
+      "largest": null,
+      "title": "Privatliv | Entropi Coaching",
+      "desc": "Sådan behandler Entropi Coaching personoplysninger fra coachingansøgninger og henvendelser.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 3
+      }
+    ],
+    "lh": {
+      "performance": 90,
+      "accessibility": 95,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "programmer.html",
+    "weight": {
+      "totalKb": 193,
+      "largest": null,
+      "title": "Gratis programmer | Entropi Coaching",
+      "desc": "Gratis styrkeløft-programmer til begyndere. 12 ugers 3-kamp programmer i Google Sheets, designet af Marc Schlichting.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 4
+      }
+    ],
+    "lh": {
+      "performance": 88,
+      "accessibility": 94,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "resultater.html",
+    "weight": {
+      "totalKb": 1669,
+      "largest": {
+        "fil": "assets/regitze-em-2026-medalje.jpg",
+        "kb": 1491
+      },
+      "title": "Resultater | Entropi Coaching",
+      "desc": "Regitze Lettings dokumenterede forløb under Entropi Coaching: dansk mester 2026, EM-guld i dødløft og tre danske seniorrekorder i −84 kg.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 7
+      }
+    ],
+    "lh": {
+      "performance": 90,
+      "accessibility": 93,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  },
+  {
+    "page": "viden.html",
+    "weight": {
+      "totalKb": 180,
+      "largest": null,
+      "title": "Viden | Entropi Coaching",
+      "desc": "Artikler og gratis programmer om styrkeløft-træning: volumen, intensitet, frekvens og autoregulering. Evidensbaseret viden fra Entropi Coaching.",
+      "missingAlt": []
+    },
+    "noJs": true,
+    "axe": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 2
+      }
+    ],
+    "lh": {
+      "performance": 88,
+      "accessibility": 95,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "deadLinks": []
+  }
+]
