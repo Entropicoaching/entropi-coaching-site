@@ -19,7 +19,7 @@
   .featured-inner { display: grid; grid-template-columns: minmax(0, 1fr) 13rem; gap: 2rem; border: 1px solid var(--border2); }
   .featured-content { max-width: 58rem; padding: 3rem; }
   .featured-media { margin: 1.5rem 1.5rem 1.5rem 0; align-self: center; }
-  .featured-media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 48% center; display: block; filter: brightness(0.88); border: 1px solid var(--border2); }
+  .featured-media img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 48% center; display: block; filter: brightness(0.88); border: 1px solid var(--border2); }
   .featured-media figcaption { margin-top: .6rem; color: var(--ink4); font-family: var(--mono); font-size: .52rem; letter-spacing: .08em; line-height: 1.5; text-transform: uppercase; }
   .featured-tag { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.5rem; }
   .featured-result { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.05; color: var(--ink); margin-bottom: 0.5rem; }
@@ -89,6 +89,7 @@
   <a href="coaching.html#ansoeg" class="nav-cta">Ansøg om coaching</a>
 </div>
 
+<main id="main-content">
 <div class="page-header">
   <div>
     <p class="page-eyebrow">Resultater</p>
@@ -115,7 +116,10 @@
       <a class="profile-source" href="https://styrke.dk/?dbid=profil&amp;licnum=5077" target="_blank" rel="noopener">Se dokumenterede resultater på Styrke.dk →</a>
     </div>
     <figure class="featured-media">
-      <img src="assets/regitze-em-2026-medalje.jpg" alt="Medaljeoverrækkelse ved EM 2026 i Malta" loading="lazy">
+      <picture>
+        <source srcset="assets/regitze-em-2026-medalje.webp" type="image/webp">
+        <img src="assets/regitze-em-2026-medalje.jpg" alt="Medaljeoverrækkelse ved EM 2026 i Malta" loading="lazy" width="480" height="640">
+      </picture>
       <figcaption>Regitze Letting · EM · Malta · marts 2026</figcaption>
     </figure>
   </div>
@@ -190,6 +194,7 @@
   <h2 class="cta-heading reveal">Vil du arbejde<br><em>mod dit næste mål?</em></h2>
   <a href="coaching.html#ansoeg" class="btn-primary reveal">Ansøg om coaching</a>
 </div>
+</main>
 
 <footer>
   <div>
@@ -212,6 +217,6 @@
 </footer>
 
 <script src="main.js"></script>
-<div class="mobile-cta-bar"><a href="coaching.html#ansoeg">Ansøg om coaching</a></div>
+<div class="mobile-cta-bar" role="region" aria-label="Hurtig handling"><a href="coaching.html#ansoeg">Ansøg om coaching</a></div>
 </body>
 </html>

@@ -33,7 +33,7 @@
 
   .historie { background: var(--bg); border-bottom: 1px solid var(--border); }
   .historie-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-  .historie-img { width: 100%; max-height: 420px; object-fit: cover; object-position: center 20%; display: block; filter: brightness(0.85); border: 1px solid var(--border2); }
+  .historie-img { width: 100%; height: auto; max-height: 420px; object-fit: cover; object-position: center 20%; display: block; filter: brightness(0.85); border: 1px solid var(--border2); }
   .historie-caption { padding: 0.6rem 1rem; background: var(--bg2); border: 1px solid var(--border); border-top: none; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); }
   .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 1.5rem; }
   .timeline-item { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); align-items: start; }
@@ -96,6 +96,7 @@
   <a href="coaching.html#ansoeg" class="nav-cta">Ansøg om coaching</a>
 </div>
 
+<main id="main-content">
 <div class="page-header">
   <div>
     <p class="page-eyebrow">Om Entropi</p>
@@ -148,7 +149,10 @@
 <section class="historie">
   <div class="historie-inner">
     <div>
-      <img src="IMG_9932.PNG" alt="EPF Europamesterskab 2025" class="historie-img reveal" loading="lazy">
+      <picture>
+        <source srcset="IMG_9932.webp" type="image/webp">
+        <img src="IMG_9932.PNG" alt="EPF Europamesterskab 2025" class="historie-img reveal" loading="lazy" width="1132" height="1906">
+      </picture>
       <div class="historie-caption">EPF Europamesterskab 2025 · Coached af Marc Schlichting</div>
     </div>
     <div>
@@ -257,6 +261,7 @@
   <h2 class="cta-heading reveal">Klar til at<br><em>ansøge?</em></h2>
   <a href="coaching.html#ansoeg" class="btn-primary reveal">Se coaching og ansøg</a>
 </div>
+</main>
 
 <footer>
   <div>
@@ -279,6 +284,6 @@
 </footer>
 
 <script src="main.js"></script>
-<div class="mobile-cta-bar"><a href="coaching.html#ansoeg">Ansøg om coaching</a></div>
+<div class="mobile-cta-bar" role="region" aria-label="Hurtig handling"><a href="coaching.html#ansoeg">Ansøg om coaching</a></div>
 </body>
 </html>
