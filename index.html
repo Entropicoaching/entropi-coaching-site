@@ -149,6 +149,10 @@
   .article-card-title em { font-style: italic; color: var(--ink3); }
   .article-card-body { font-size: 0.84rem; color: var(--ink3); line-height: 1.75; margin-bottom: 1.25rem; }
   .article-card-meta { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink4); margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .adaptiv-cta { margin-top: 1px; padding: 1.6rem 1.75rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border: 1px solid var(--border); background: var(--bg); }
+  .adaptiv-cta-copy { max-width: 540px; }
+  .adaptiv-cta-title { font-family: var(--serif); font-size: clamp(1.3rem, 2.2vw, 1.65rem); font-weight: 400; line-height: 1.2; color: var(--ink); margin-bottom: 0.45rem; }
+  .adaptiv-cta-body { font-size: 0.84rem; color: var(--ink3); line-height: 1.75; }
 
   /* VIDEOCOACH (feature-blok) */
   .videocoach { background: var(--bg2); border-bottom: 1px solid var(--border); }
@@ -182,6 +186,7 @@
     .coaching-inner { grid-template-columns: 1fr; }
     .coaching-left { border-right: none; border-bottom: 1px solid var(--border); }
     .viden-grid { grid-template-columns: 1fr; }
+    .adaptiv-cta { flex-direction: column; align-items: flex-start; }
     .videocoach-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   }
 </style>
@@ -383,6 +388,13 @@
       <div class="article-card-body">Du har løftet de samme kilo i tre uger. Men er det fatigue eller reel stagnation? Svaret bestemmer alt.</div>
       <div class="article-card-meta">2025 · 6 min. læsning</div>
     </a>
+  </div>
+  <div class="adaptiv-cta reveal">
+    <div class="adaptiv-cta-copy">
+      <h3 class="adaptiv-cta-title">Entropi Adaptiv — gratis beta</h3>
+      <p class="adaptiv-cta-body">Fire faste styrkeprogrammer. Opret en gratis konto og kom i gang i dit eget tempo.</p>
+    </div>
+    <a href="https://adaptiv.entropicoaching.dk/" class="btn-primary">Prøv gratis beta</a>
   </div>
 </section>
 
