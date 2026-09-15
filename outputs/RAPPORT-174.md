@@ -2,6 +2,15 @@
 
 Ordre: `ORDRE-Setu.md` (174) · Gren: `sitet-tilgaengeligt` · Base: `main` (5d68145)
 
+## Gren og commits
+
+- Gren: `sitet-tilgaengeligt` (worktree `entropi-coaching-site-wt2`), base
+  `main` (`5d68145`).
+- Commit 1 — målingen: `5650a0a`
+- Commit 2 — retter det der objektivt fejler: `ce0214f`
+- Commit 3 — denne rapport færdiggjort + Marcs valg-liste + skærmbilleder:
+  se `git log --oneline -1 sitet-tilgaengeligt` efter aflevering.
+
 Metode: `node scripts/maal.mjs`-motoren (samme puppeteer + axe-core der allerede
 ligger i `devDependencies`) genbrugt i et engangs-script (`_audit174.mjs`, ikke
 committet) til at måle alle 14 sider ved mobil-viewport (390×844). Axe-core
@@ -171,3 +180,113 @@ genbrugt, eller en fjernet linje CSS. Ingen redesign.
   off-screen). Min egen måling fanger dem stadig som "for små", fordi de er
   lagt ud af skærmen — det er korrekt opførsel, ikke en fejl.
 - **Tekststørrelser under 16px**: ikke rettet, se afsnit 3 (Marcs valg).
+
+## 3. Marcs valg
+
+Ikke bygget — kun forslag, adskilt fra det der allerede er rettet ovenfor.
+Skærmbilleder i `outputs/skaermbilleder-174/` (mobil, 390px), før = stillet op
+mod grenen lige før Commit 2 (samme kode som `main`), efter = nu.
+
+**1. `--ink4` blev markant lysere (`#4a4844` → `#92908c`) for at bestå
+kontrastkravet.** Det var nødvendigt for at bestå WCAG AA, men resultatet er
+at "den svageste grå" nu ligger tæt på `--ink3` — sitets fire gråtoner er i
+praksis blevet til tre. Forslag: behold som den er (den eneste vej til at
+bestå kravet uden at ændre selve baggrundene), eller overvej på sigt en
+bredere palet-samtale hvor baggrundene (`--bg`–`--bg4`) også er i spil, så
+der er mere plads mellem tonerne igen. Skærmbillede:
+`skaermbilleder-174/foer-footer.png` → `efter-footer.png`.
+
+**2. Baggrundens generelle lysstyrke er ikke rørt.** Din irritation over
+kontrast i app og site handler måske ikke kun om enkelte tekstfarver, men om
+at hele siden føles mørk — det er ikke noget jeg har rettet på, for
+`--bg`/`--bg2`/`--bg3`/`--bg4` er uændrede, og en generel opklaring er et
+redesign, ikke en målbar fejl. Skærmbillede (uændret, til reference):
+`skaermbilleder-174/foer-hero.png` / `efter-hero.png` (identiske — viser
+status quo).
+
+**3. Footer og mobilmenu fik synligt mere luft.** For at nå 44px trykflade
+uden at bruge det usynlige `::after`-trick (forbeholdt links med tætsiddende
+understregning) voksede den *synlige* boks på footer-links, footer-kontakt
+og mobilmenuens links. Footeren er derfor lidt højere, og linkene står
+længere fra hinanden lodret. Forslag: behold (mest robust, synligt hvad der
+er trykfladen), eller skift til samme usynlige-udvidelse-trick som
+btn-ghost/vc-link for et visuelt identisk footer. Skærmbillede:
+`skaermbilleder-174/foer-footer.png` → `efter-footer.png`.
+
+**4. Tekststørrelser under 16px er ikke rørt.** Hele mono-label-systemet
+(nav, footer, eyebrows, meta-tags, korts metadata) er tegnet i 9–15px — det
+er ikke enkeltstående fejl, det er hele den grafiske identitet. At hæve
+gulvet til fx 12–13px ville røre stort set hver eneste side. Forslag: behold
+som bevidst mikro-typografi (ingen WCAG-krav tvinger 16px), eller udpeg de
+mest læse-tunge steder (fx `.article-body`-relaterede metadata) til en
+målrettet forhøjelse — ikke hele systemet på én gang. Intet skærmbillede
+(uændret på alle sider).
+
+**5. `om.html`'s "Entropi"-opslagsord gik fra næsten usynligt til tydeligt
+synligt.** Det var en objektiv kontrastfejl (1,25:1 mod krav 3:1), så det er
+rettet i Commit 2 — men hvis den svage, "vandmærke"-agtige effekt var et
+bevidst designvalg og ikke en fejl, er det værd at se efter. Skærmbillede:
+`skaermbilleder-174/foer-navn.png` → `efter-navn.png`.
+
+## 4. Testresultat
+
+- `npm run tjek:alle` findes ikke i `package.json` på `main` (kun `npm run
+  maal`) — sandsynligvis en reference til et script der findes på en anden
+  gren (fx `sitet-efterset`/`artikel-skabelon`), ikke på basen denne ordre
+  navngiver. Jeg har brugt `npm run maal` i stedet og noterer det her frem
+  for at gætte på et script der ikke findes.
+- **`npm run maal`** (Lighthouse + axe-core + linkinator + sidevægt, alle 15
+  sider): grøn. `outputs/MAAL-EFTER.md`/`.json` opdateret. Accessibility-score
+  89–96 → **100** på alle 15 sider. Axe-fejl (kritisk/alvorlig) 1 → 0 på 14 af
+  15 sider — index.html viser stadig "1" i `maal.mjs`s egen kolonne, se
+  forbehold nedenfor. 0 manglende `alt`, 0 døde interne links, alle sider
+  virker uden JS.
+- **Eget engangs-audit** (mobil-viewport 390px, `.reveal` tvunget synlig,
+  axe-core `color-contrast`/`image-alt`/`heading-order`/`target-size` m.fl.
+  + manuel DOM-måling): **0 fund** på alle 14 sider efter Commit 2 (var en
+  lang liste før).
+- **Forbehold om index.html's resterende "1" i `npm run maal`**: verificeret
+  direkte — det er `.hero-body-2`, `.btn-ghost[href$="coaching.html"]` og
+  Afklar-linket, alle stadig midt i deres `.reveal`-fade-animation, fordi
+  `scripts/maal.mjs`s egen axe-måling ikke venter på eller tvinger
+  `.reveal`-elementer synlige (og bruger desktop-viewport, ikke mobil). Det
+  er samme falsk-positiv-mønster jeg selv ramte i første udkast af mit
+  audit-script, og som jeg rettede for. Dette er en svaghed i selve
+  `scripts/maal.mjs` (uden for denne ordres omfang at rette, og ordren siger
+  udtrykkeligt ikke at røre målemotoren) — ikke en reel kontrastfejl på
+  index.html. Værd at nævne til Dhruva/Marc, hvis `maal.mjs` skal bruges som
+  fast tjek fremover.
+- Skærmbilleder + visuel gennemgang (footer, mobilmenu, fokusring på
+  formularfelter) af index.html, om.html, coaching.html, viden.html,
+  artikel-deload.html, afklaring.html — intet brækket layout.
+
+## 5. Hvad er næste
+
+- Marc tager stilling til de 5 punkter i afsnit 3.
+- Hvis Marc vil videre med en bredere palet-samtale (baggrundens lysstyrke),
+  hører det til et nyt, større Delmål/ordre — ikke en udvidelse af denne.
+- Overvej at rette `scripts/maal.mjs`s axe-måling (reveal-fade + mobil
+  viewport) i en separat ordre, så værktøjet ikke bliver ved med at vise et
+  falsk index.html-fund.
+- `npm run tjek:alle` bør enten tilføjes til `main`s `package.json`, eller
+  ordrer bør holde op med at referere til det — det findes kun på andre
+  grene.
+
+## Ærlige grænser
+
+- Jeg har ikke testet med en skærmlæser (NVDA/VoiceOver) — kun automatiseret
+  axe-core + manuel DOM-inspektion. Axe fanger typisk 30-40% af reelle
+  a11y-problemer; strukturen (overskrifter, alt, tabindex, formularlabels)
+  er gennemgået manuelt, men en reel skærmlæser-gennemgang er ikke lavet.
+- Fysisk enhedstest (rigtig telefon i sollys) er ikke muligt herfra — alt er
+  målt i en headless browser på 390×844.
+- `--amber-dim` er lysnet globalt for at rette to knap-kanter, men bruges
+  også dekorativt ca. 15 andre steder (venstrekanter på citater/noter,
+  understregninger) hvor kravet ikke gælder — de er ikke vurderet enkeltvis
+  for om den nye tone "ser rigtig ud", kun at kontrastkravet er opfyldt hvor
+  det er en knap.
+- Jeg har ikke rørt Løftmodellens embeds, som ordren forbyder.
+- `.footer-contact div a`-fixet (Privatliv-linket i de 6 artikelsider) er en
+  ny CSS-regel, ikke kun en farvejustering — den mindste rettelse jeg kunne
+  finde til at genskabe den kontrast der allerede fandtes andre steder på
+  sitet, men det er teknisk en ny regel, ikke kun "juster lysheden".
