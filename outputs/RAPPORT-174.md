@@ -2,7 +2,7 @@
 
 Ordre: `ORDRE-Setu.md` (174) · Gren: `sitet-tilgaengeligt` · Base: `main` (5d68145)
 
-## Gren og commits
+## Gren
 
 - Gren: `sitet-tilgaengeligt` (worktree `entropi-coaching-site-wt2`), base
   `main` (`5d68145`).
@@ -10,6 +10,16 @@ Ordre: `ORDRE-Setu.md` (174) · Gren: `sitet-tilgaengeligt` · Base: `main` (5d6
 - Commit 2 — retter det der objektivt fejler: `ce0214f`
 - Commit 3 — denne rapport færdiggjort + Marcs valg-liste + skærmbilleder:
   se `git log --oneline -1 sitet-tilgaengeligt` efter aflevering.
+
+## Hvad ændret
+
+Fem afsnit herunder bærer det fulde svar: "1. Målingen" (Commit 1, ingen
+rettelser), "2. Det der objektivt fejler" (Commit 2 — kontrast, fokusring,
+trykflader, hvad der bevidst ikke er rørt), og "3. Marcs valg" (fem punkter
+til Marc, ikke bygget, med før/efter-skærmbilleder). Kort: kontrast, synlig
+fokusring og trykfladestørrelse er rettet til WCAG AA på alle 14 sider ved
+mindst mulige farve-/CSS-justeringer; ingen redesign, ingen nye farver,
+Løftmodellens embeds urørt.
 
 Metode: `node scripts/maal.mjs`-motoren (samme puppeteer + axe-core der allerede
 ligger i `devDependencies`) genbrugt i et engangs-script (`_audit174.mjs`, ikke
@@ -228,7 +238,7 @@ rettet i Commit 2 — men hvis den svage, "vandmærke"-agtige effekt var et
 bevidst designvalg og ikke en fejl, er det værd at se efter. Skærmbillede:
 `skaermbilleder-174/foer-navn.png` → `efter-navn.png`.
 
-## 4. Testresultat
+## Testresultat
 
 - `npm run tjek:alle` findes ikke i `package.json` på `main` (kun `npm run
   maal`) — sandsynligvis en reference til et script der findes på en anden
@@ -260,7 +270,7 @@ bevidst designvalg og ikke en fejl, er det værd at se efter. Skærmbillede:
   formularfelter) af index.html, om.html, coaching.html, viden.html,
   artikel-deload.html, afklaring.html — intet brækket layout.
 
-## 5. Hvad er næste
+## Hvad er næste
 
 - Marc tager stilling til de 5 punkter i afsnit 3.
 - Hvis Marc vil videre med en bredere palet-samtale (baggrundens lysstyrke),
