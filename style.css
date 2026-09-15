@@ -10,9 +10,9 @@
   --ink:       #edeae2;
   --ink2:      #ccc8bc;
   --ink3:      #908d84;
-  --ink4:      #4a4844;
+  --ink4:      #92908c;
   --amber:     #c8923a;
-  --amber-dim: #7a5520;
+  --amber-dim: #8a6125;
   --border:    rgba(237,234,226,0.08);
   --border2:   rgba(237,234,226,0.14);
   --serif:     'Playfair Display', Georgia, serif;
@@ -42,9 +42,10 @@ textarea:focus-visible {
   position: fixed; top: 0; left: 1rem; z-index: 400;
   transform: translateY(-140%);
   background: var(--amber); color: var(--bg);
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1rem;
   font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
   letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+  min-height: 44px; display: inline-flex; align-items: center; box-sizing: border-box;
 }
 .skip-link:focus { transform: translateY(0); }
 .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
@@ -57,7 +58,10 @@ nav {
   background: rgba(20,20,16,0.94); backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
-.nav-logo { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+.nav-logo {
+  font-family: var(--serif); font-size: 1.2rem; color: var(--ink); text-decoration: none;
+  display: inline-flex; align-items: center; min-height: 44px;
+}
 .nav-logo span { color: var(--amber); }
 .nav-links { display: flex; gap: 2rem; list-style: none; position: relative; z-index: 201; }
 .nav-links a {
@@ -79,7 +83,7 @@ nav {
 /* ---- HAMBURGER MENU ---- */
 .nav-hamburger {
   display: none; background: none; border: none; cursor: pointer;
-  width: 32px; height: 32px; position: relative; z-index: 210;
+  width: 44px; height: 44px; position: relative; z-index: 210;
   flex-direction: column; align-items: center; justify-content: center; gap: 5px;
 }
 .nav-hamburger span {
@@ -102,7 +106,8 @@ nav {
   font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
   letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--ink2); text-decoration: none; transition: color 0.15s;
-  padding: 0.6rem 0;
+  padding: 0.8rem 0; display: inline-flex; align-items: center; min-height: 44px;
+  box-sizing: border-box;
 }
 .mobile-menu a:hover { color: var(--ink); }
 .mobile-menu .nav-cta {
@@ -152,6 +157,12 @@ section { padding: 5.5rem 2.5rem; }
   color: var(--ink3); text-decoration: none;
   border-bottom: 1px solid var(--border2); padding-bottom: 0.2rem;
   transition: color 0.15s;
+  position: relative;
+}
+/* Usynlig trykflade på 44px omkring den korte understregede tekst, uden at
+   flytte selve understregningen væk fra teksten (ren visuel bevaring). */
+.btn-ghost::after {
+  content: ''; position: absolute; left: -8px; right: -8px; top: -15px; bottom: -15px;
 }
 .btn-ghost:hover { color: var(--ink); }
 
@@ -167,14 +178,21 @@ footer {
   font-family: var(--mono); font-size: 0.65rem;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink4); margin-top: 0.3rem;
 }
-.footer-links { display: flex; gap: 1.75rem; list-style: none; justify-content: center; }
+.footer-links { display: flex; gap: 1.25rem; list-style: none; justify-content: center; }
 .footer-links a {
   font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--ink3); text-decoration: none; transition: color 0.15s;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; min-width: 44px; padding: 0 0.4rem; box-sizing: border-box;
 }
 .footer-links a:hover { color: var(--ink); }
 .footer-contact { text-align: right; font-size: 0.82rem; color: var(--ink3); line-height: 1.8; }
-.footer-contact a { color: var(--ink2); text-decoration: none; transition: color 0.15s; }
+/* Kun det direkte email-link, ikke Privatliv-linket inde i .footer-meta —
+   det sidder midt i en tekstlinje og er undtaget trykfladekravet. */
+.footer-contact > a {
+  color: var(--ink2); text-decoration: none; transition: color 0.15s;
+  display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box;
+}
 .footer-contact a:hover { color: var(--ink); }
 .footer-meta { margin-top: 0.45rem; color: var(--ink4); font-size: 0.68rem; line-height: 1.7; }
 .footer-meta a { color: var(--ink3); text-decoration: underline; text-decoration-color: var(--border2); text-underline-offset: 0.2rem; }

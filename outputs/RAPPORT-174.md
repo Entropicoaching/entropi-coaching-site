@@ -77,6 +77,97 @@ alle `h1`–`h6` stemmer overens.
 - `tabindex="-1"` findes tre steder (`#form-success`, `#form-error` på
   coaching.html, `#optin-success`/`#optin-error` på programmer.html) — det
   er den rigtige brug (programmatisk fokus til statusbeskeder), ikke en fejl.
-- Reelt fund: fokusmarkering er usynlig eller stærkt svækket to steder (se
+- Reelt fund: fokusmarkering er usynlig eller stærkt svækket på 8 steder (se
   Commit 2 nedenfor) — det er et synligheds-, ikke et betjenings-problem;
   alle elementer kan nås og aktiveres med tastatur alene.
+
+## 2. Det der objektivt fejler (Commit 2)
+
+Alt her er den mindst mulige ændring: eksisterende farvetoken justeret i
+lyshed (ingen nye farver i paletten), eksisterende usynlig-trykflade-mønster
+genbrugt, eller en fjernet linje CSS. Ingen redesign.
+
+### Kontrast
+
+- **`--ink4`** (`#4a4844` → `#92908c`) i `style.css` og de 6 artikelsiders
+  lokale `:root`. Ny værdi holder ≥4,5:1 mod alle tre baggrunde den bruges
+  på (`--bg` 5,79:1, `--bg2` 5,36:1, `--bg3` 4,89:1 — værst-tilfælde er
+  `.f-stat-label` på resultater.html mod `--bg3`).
+- **`--amber-dim`** (`#7a5520` → `#8a6125`) i `style.css` og de 6
+  artikelsiders `:root`. Retter kantkontrasten på `.nav-cta` og
+  `.program-link` til ≥3:1 (nu 3,36:1 mod `--bg`, 3,11:1 mod `--bg2`).
+  Bruges også til dekorative venstrekanter og understregninger, hvor kravet
+  ikke gælder — men samme token, så én justering retter det hele.
+- **om.html `.navn-word`**: skiftet fra `--bg4` (en baggrundsfarve brugt som
+  tekst, 1,25:1) til `--ink4` (nu 5,36:1) — det store opslagsord "Entropi"
+  var praktisk talt usynligt.
+- **6 artikelsider, footer-copyright-linjen**: fjernet `opacity:0.5` på
+  `<div>`'en med CVR-nummer og Privatliv-link. Den halverede en ellers
+  godkendt kontrast (ink3/ink2) ned under grænsen.
+- **Rettelse af egen fejl undervejs**: da footer-kontakt-reglen blev
+  indsnævret til kun det direkte email-link (for at undgå at trykfladekravet
+  utilsigtet ramte det indlejrede Privatliv-link, se nedenfor), mistede
+  Privatliv-linket i de 6 artikelsider sin farve helt og faldt tilbage til
+  browserens standardblå (`#0000EE`, 1,81:1 mod `--bg2`) — værre end før.
+  Fanget af en før/efter-måling og rettet med en ny regel
+  (`.footer-contact div a`) der giver linket `--ink3` med understregning,
+  samme mønster som `.footer-meta a` i `style.css`.
+
+### Fokusmarkering
+
+- **coaching.html** (`.field input/select/textarea`) og **programmer.html**
+  (`.optin-input`) havde `outline: none` der overskrev den globale
+  fokusring. Formularfelter (navn, email, vægtklasse, besked, tilmelding)
+  havde reelt ingen synlig fokusmarkering — kun en svag baggrundstoning
+  (`background: var(--bg2)`/`var(--bg3)` ved `:focus-within`, næsten
+  usynlig). `outline: none` fjernet; den globale amber-ring virker nu.
+- **De 6 artikelsider** manglede den globale
+  `a:focus-visible, button:focus-visible, …` ringmarkering som resten af
+  sitet har haft i `style.css` siden tidligere ordrer — de har åbenbart
+  aldrig fået den med, da de blev bygget som selvstændige filer. Tilføjet
+  identisk til `style.css`s version i alle 6. `.nav-back` og `.author-name a`
+  havde egne, mere specifikke regler der kun skiftede farve (ingen ring) —
+  suppleret med samme outline.
+
+### Trykflader under 44px
+
+- **style.css** (rammer 9 sider): `.footer-links a`, `.footer-contact > a`
+  (kun det direkte email-link — se kontrast-afsnittet), `.mobile-menu a`,
+  `.nav-logo`, `.nav-hamburger`, `.skip-link` fik `min-height: 44px` (og
+  `.nav-hamburger` `44×44px` helt). `.footer-links` fik desuden
+  `min-width: 44px` + lidt padding, så korte labels som "Viden" (36px bred)
+  også når 44px i bredden — gap justeret ned tilsvarende, så footeren ikke
+  bliver bredere.
+- **`.btn-ghost`, `.vc-link`, `.viden-all`, `.profile-source`,
+  `.articles-cta-secondary`**: disse har en tætsiddende understregning
+  (`border-bottom`) klods op ad teksten. At vokse den synlige boks til 44px
+  ville rive stregen væk fra teksten — et rent designbrud. Løst med en
+  usynlig `::after`-flade (samme element, `position:absolute`, ingen
+  synlig content) der udvider selve trykfladen 44×44px+ uden at flytte en
+  eneste pixel af det synlige design. Det er den løsning WCAG selv nævner
+  som gyldig (target kan bestå af synlig + usynlig trykflade).
+- **6 artikelsider**: `.nav-logo`, `.nav-back`, `.back-link`,
+  `.author-name a`, `.footer-links a`, `.footer-contact > a` fik samme
+  `min-height: 44px`-behandling som style.css-versionerne.
+- **programmer.html `.program-link`**: har en fuld kant (rigtig knap-look),
+  så her er `min-height: 44px` lagt direkte på — ingen usynlig-flade-trick
+  nødvendig.
+- **coaching.html `.field input, .field select`**: `min-height: 44px`.
+  `.field textarea` og `.optin-input` (programmer.html) var allerede ≥44px.
+
+### Ikke rettet — undtaget eller Marcs valg
+
+- **Inline tekstlinks** ("Læs først om…", "Læs om behandling af
+  personoplysninger.", "ansøge om coaching her", email/Datatilsynet-links i
+  privatliv.html, Privatliv-linket i `.footer-meta`): sidder midt i en
+  sætning/tekstlinje. WCAG's eget target-size-krav (2.5.8) har en udtrykkelig
+  undtagelse for links der er en del af en løbende tekst — de er ikke rettet,
+  og bør ikke tvinges til 44px uden at brække linjen.
+- **`.nav-links a`** (desktop-menuen): `display:none` under 900px, aldrig
+  synlig eller trykbar på en telefon — udenfor "telefon i sollys"-formålet
+  med denne ordre. Ikke rettet.
+- **Honeypot-felter** (`.hp-field`, `_gotcha`): bevidst usynlige/uden for
+  tabulatorrækkefølgen (`aria-hidden`, `tabindex="-1"`, positioneret
+  off-screen). Min egen måling fanger dem stadig som "for små", fordi de er
+  lagt ud af skærmen — det er korrekt opførsel, ikke en fejl.
+- **Tekststørrelser under 16px**: ikke rettet, se afsnit 3 (Marcs valg).
