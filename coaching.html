@@ -61,10 +61,11 @@
   .field { display: flex; flex-direction: column; background: var(--bg); padding: 1.25rem 1.5rem; }
   .field label { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink3); margin-bottom: 0.5rem; }
   .field input, .field select, .field textarea {
-    background: transparent; border: none; outline: none;
+    background: transparent; border: none;
     font-family: var(--sans); font-size: 0.92rem; font-weight: 300;
     color: var(--ink); line-height: 1.5; padding: 0; width: 100%;
   }
+  .field input, .field select { min-height: 44px; }
   .field input::placeholder, .field textarea::placeholder { color: var(--ink4); }
   .field select { cursor: pointer; -webkit-appearance: none; }
   .field select option { background: var(--bg3); color: var(--ink); }
