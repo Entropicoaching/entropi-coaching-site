@@ -1,0 +1,234 @@
+/* Opslagsværket (Ordre 297): indholdsfortegnelse, kapitler, "gå dybere" og fase-figurer til artikel-squat.html.
+   Bygger oven på artikel-skabelon.css og bruger kun dens farvevariabler, fonte og bokse (.note, .article-figure,
+   .fact-box). Ingen nyt framework. Filen hører til denne ene artikel. */
+
+/* Indholdsfortegnelse: en <details> der klapper sammen. Åben på bred skærm via lille script i siden, lukket på mobil. */
+.toc{margin:0 0 3rem;background:var(--bg2);border:1px solid var(--border2);border-left:2px solid var(--amber)}
+.toc summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:48px;padding:.5rem 1.25rem;cursor:pointer;list-style:none;font:500 .62rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
+.toc summary::-webkit-details-marker{display:none}
+.toc summary::after{content:'+';font-size:1.1rem;line-height:1}
+.toc[open] summary::after{content:'\2212'}
+.toc summary:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.toc ol{list-style:none;margin:0;padding:0 1.25rem .5rem;counter-reset:toc}
+.toc li{border-top:1px solid var(--border)}
+.toc li:not(.toc-ekstra){counter-increment:toc}
+.toc a{display:flex;align-items:center;gap:.9rem;min-height:44px;padding:.3rem 0;color:var(--ink2);text-decoration:none;font-size:.92rem;line-height:1.4}
+.toc li:not(.toc-ekstra) a::before{content:counter(toc,decimal-leading-zero);flex:none;width:1.5rem;font:.62rem var(--mono);color:var(--amber)}
+.toc li.toc-ekstra a{padding-left:2.4rem;color:var(--ink3);font-size:.85rem}
+.toc a:hover{color:var(--ink)}
+.toc a:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+
+/* Kapitler */
+.kapitel{scroll-margin-top:76px;margin-top:3.5rem;padding-top:.25rem}
+.kapitel:first-of-type{margin-top:0}
+.article-body .kapitel>h2{display:flex;align-items:baseline;gap:.9rem;margin-top:0}
+.kap-nr{font:500 .68rem var(--mono);letter-spacing:.08em;color:var(--amber)}
+.article-body h3{font:400 1.2rem/1.3 var(--serif);color:var(--ink);margin:2.25rem 0 .75rem;scroll-margin-top:76px}
+.article-body h4{font:400 1.02rem/1.35 var(--serif);color:var(--ink);margin:1.75rem 0 .6rem;padding-top:.15rem;scroll-margin-top:76px}
+.article-body .svar{font-size:1.04rem;color:var(--ink);line-height:1.8}
+
+/* Kapitel der endnu ikke har sit indhold: en linje om hvad der kommer */
+.kommer{margin:0 0 1.5rem;padding:.9rem 1.1rem;border:1px dashed var(--border2);background:var(--bg2);font-size:.88rem;line-height:1.7;color:var(--ink3)}
+.kommer-label{display:block;margin-bottom:.3rem;font:500 .58rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
+.article-body .kommer p{font-size:.88rem;line-height:1.7;color:var(--ink3);margin:0}
+
+/* "Gå dybere": tal og kilder, foldet sammen. */
+.dybere{margin:0 0 1.75rem;background:var(--bg2);border:1px solid var(--border2);border-radius:4px}
+.dybere summary{display:flex;align-items:center;gap:.6rem;min-height:44px;padding:.5rem 1rem;cursor:pointer;list-style:none;font:500 .62rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+.dybere summary::-webkit-details-marker{display:none}
+.dybere summary::before{content:'+';color:var(--amber);font-size:.9rem}
+.dybere[open] summary::before{content:'\2212'}
+.dybere summary:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.dybere dl{margin:0;padding:0 1rem 1rem}
+.dybere dt{margin-top:1rem;font:500 .6rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
+.dybere dd{margin:.3rem 0 0;font-size:.85rem;line-height:1.75;color:var(--ink2);overflow-wrap:anywhere}
+.dybere dd .kilde{display:block;margin-top:.25rem;font-size:.74rem;line-height:1.55;color:var(--ink4)}
+.dybere dd .tal{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink)}
+
+/* Faser: en figur pr. fase, tegnet som indlejret SVG fra segmentmodellen */
+.fase{margin-top:2.75rem;padding-top:.25rem}
+.fase:first-of-type{margin-top:1.5rem}
+.fase-figur{margin:1.25rem 0 1.5rem;padding:1rem;background:var(--bg2);border:1px solid var(--border)}
+.fase-figur svg{display:block;width:100%;max-width:210px;height:auto;margin:0 auto}
+.fase-figur figcaption{margin-top:.75rem;font-size:.78rem;line-height:1.65;color:var(--ink4)}
+.fase-figur figcaption strong{color:var(--ink3);font-weight:500}
+.fase-figur .fig-ground{stroke:var(--border2);stroke-width:1}
+.fase-figur .fig-lod{stroke:var(--ink4);stroke-width:1;stroke-dasharray:3 3;fill:none}
+.fase-figur .fig-seg{stroke:#57544c;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.fase-figur .fig-hoved{fill:#57544c}
+.fase-figur .fig-led{fill:var(--ink3)}
+.fase-figur .fig-stang{stroke:#89857a;stroke-width:5;stroke-linecap:round}
+.fase-figur .fig-midtfod{stroke:var(--amber);stroke-width:1.4;stroke-linecap:round}
+.fase-figur .fig-arm{stroke:var(--amber);stroke-width:1.2;fill:none}
+.fase-figur .fig-tekst{fill:var(--amber);font:500 10px var(--mono)}
+
+@media(min-width:701px){
+  .fase-figur{display:grid;grid-template-columns:230px minmax(0,1fr);gap:1.5rem;align-items:center}
+  .fase-figur figcaption{margin-top:0}
+}
+@media(max-width:700px){
+  .toc summary{padding:.5rem 1rem}
+  .toc ol{padding:0 1rem .5rem}
+  .fase-figur{padding:.75rem}
+  .dybere dl{padding:0 .85rem .85rem}
+}
+
+/* Statisk figur pr. fase, kopieret fra løftmodellen (egen billedmappe, selvbærende SVG med egen legende). Stangens tre varianter genbruger .fase-figur, ikke denne. Fejlbillederne (kapitel 7) er samme slags kopi, samme regler. */
+.article-figure.anatomi-figur img,.article-figure.fejlbillede-figur img{display:block;width:100%;height:auto}
+.article-figure.anatomi-figur figcaption,.article-figure.fejlbillede-figur figcaption{margin-top:.85rem}
+
+/* Fejlbillederne: én "problem hvis / bias hvis"-linje pr. fejlbillede, tydeligt adskilt fra brødteksten uden endnu en boks-stil. */
+.domme{margin:1rem 0 1.5rem;padding-left:1rem;border-left:2px solid var(--border2);font-size:.92rem;line-height:1.75;color:var(--ink3)}
+.domme strong{color:var(--ink);font-weight:500}
+
+/* Yantras indlejring (Ordre 302): fase-vælger for anatomilaget, samme kortstil som .loeft-panel. Klasserne
+   anatomi-* kommer fra assets/squat-anatomi.js (mountSquatAnatomiVaelger) og styles udefra herfra. */
+.anatomi-mount .anatomi-canvas{display:block;width:100%;max-width:480px;height:auto;margin:0 auto;background:var(--bg);border:1px solid var(--border)}
+.anatomi-mount .anatomi-faser{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.1rem 0}
+.anatomi-mount .anatomi-fase{font:.82rem var(--sans);color:var(--ink2);background:var(--bg2);border:1px solid var(--border2);border-radius:4px;padding:.55rem .85rem;min-height:44px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+.anatomi-mount .anatomi-fase:hover{border-color:var(--amber-dim)}
+.anatomi-mount .anatomi-fase[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--bg);font-weight:500}
+.anatomi-mount .anatomi-fase:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.anatomi-mount .anatomi-tabel-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:.5rem}
+.anatomi-mount .anatomi-tabel{width:100%;min-width:480px;border-collapse:collapse;margin-top:0;font-family:var(--mono);font-size:.74rem}
+.anatomi-mount .anatomi-tabel th,.anatomi-mount .anatomi-tabel td{padding:.4rem .5rem;text-align:left;border-bottom:1px solid var(--border);color:var(--ink2)}
+.anatomi-mount .anatomi-tabel th{color:var(--ink3);font-weight:500;font-size:.62rem;letter-spacing:.04em;text-transform:uppercase}
+.anatomi-mount .anatomi-tabel td.num,.anatomi-mount .anatomi-tabel th:nth-child(n+2){text-align:right}
+.anatomi-mount .anatomi-status{color:var(--ink4);font-style:italic}
+.anatomi-mount .anatomi-note{margin:.85rem 0 0;font-size:.72rem;line-height:1.65;color:var(--ink4)}
+
+/* Ordre 346: kapitel 6, virkeligheden mod modellen (dødløft-eksemplet). Kun kapitlets egne klasser. */
+.mom-mount{margin:1.25rem 0}
+.mom-fig img{display:block;width:100%;max-width:620px;height:auto;margin:0 auto}
+.mom-tabel-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.25rem 0}
+.mom-tabel{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:.72rem;font-variant-numeric:tabular-nums}
+.mom-tabel caption{caption-side:bottom;text-align:left;padding-top:.6rem;color:var(--ink3);font-size:.68rem;line-height:1.6}
+.mom-tabel th,.mom-tabel td{padding:.45rem .5rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--border);color:var(--ink2)}
+.mom-tabel thead th{color:var(--ink3);font-weight:500;font-size:.62rem;letter-spacing:.04em;text-transform:uppercase}
+.mom-tabel tbody th{font-weight:400;color:var(--ink)}
+/* Ordre 615: tre kolonner og modellens tal under leddet, saa kapitel 6 kan laeses paa 390 px uden sidelaens rulning. */
+.mom-tabel th,.mom-tabel td{width:34%}
+.mom-tabel th:first-child{width:32%}
+@media (max-width:480px){.mom-tabel{font-size:.68rem}.mom-tabel th,.mom-tabel td{padding:.4rem .3rem}}
+.mom-maalt,.mom-model{display:block}
+.mom-model{color:var(--ink3);font-size:.64rem}
+.mom-ja .mom-model{color:var(--amber)}
+/* Ordre 369: spørgsmål til Marc, der skal besvares før udgivelse. Synlige med vilje, så de ikke glemmes. */
+.marc{display:inline;padding:.05rem .35rem;border:1px dashed var(--amber);color:var(--amber);font:500 .78rem/1.6 var(--mono);background:var(--bg2)}
+/* Ordre 430: skjult i den offentlige udgave, til Marc har svaret. Fjern klassen skjul-marc fra body i artikel-squat.html for at vise dem igen. */
+.skjul-marc .marc{display:none}
+/* Ordre 369: figurerne i kapitel 1 og 5 tegnet om. Stangen ses fra enden med en 45 cm skive, kroppen har omrids. */
+.fase-figur .fig-krop{fill:#57544c}
+.fase-figur .fig-hals{stroke:#57544c;stroke-linecap:round}
+.fase-figur .fig-lem{stroke:#6f6b61;stroke-linecap:round;fill:none}
+.fase-figur .fig-skive{fill:none;stroke:#89857a;stroke-width:1.6;opacity:.55}
+.fase-figur .fig-stang-nav{fill:#b7b2a5}
+/* Ordre 375: anatomitabellen skal kunne læses uden at rulle sidelæns på telefonen, også procenten. */
+@media(max-width:700px){
+  .anatomi-mount .anatomi-tabel{min-width:0;font-size:.72rem}
+  .anatomi-mount .anatomi-tabel th,.anatomi-mount .anatomi-tabel td{padding:.4rem .25rem}
+  .anatomi-mount .anatomi-tabel td.num{white-space:nowrap}
+  .anatomi-mount .anatomi-tabel td.num:nth-child(2){white-space:normal}
+  .anatomi-mount .anatomi-tabel th{font-size:.6rem;letter-spacing:0}
+}
+/* Ordre 375: panelet i kapitel 2. Figuren og skyderne skal kunne ses på samme skærm: knapperne og skyderne
+   ligger lige under figuren, aflæsningen efter dem. På telefonen er figuren lavere og bliver stående øverst,
+   mens der rulles gennem skyderne. På bred skærm står figuren til venstre og knapperne til højre. */
+#squat-panel{display:grid;grid-template-columns:minmax(0,1fr)}
+#squat-panel .loeft-panel-canvas-wrap{order:1}
+#squat-panel .loeft-controls{order:2}
+#squat-panel .loeft-stats{order:3}
+@media(max-width:700px){
+  #squat-panel .loeft-panel-canvas-wrap{position:sticky;top:57px;z-index:1;background:var(--bg3);padding:.35rem 0 .5rem}
+  #squat-panel .loeft-canvas{width:auto;max-width:100%;height:38vh;max-height:none;margin:0 auto}
+  #squat-panel .loeft-controls{margin-top:.75rem;gap:.8rem}
+}
+@media(min-width:701px){
+  #squat-panel{grid-template-columns:minmax(0,5fr) minmax(0,6fr);column-gap:1.5rem;align-items:start}
+  #squat-panel .loeft-panel-canvas-wrap{grid-column:1;grid-row:1 / span 2;position:sticky;top:76px}
+  #squat-panel .loeft-controls{grid-column:2;grid-row:1;margin-top:0}
+  #squat-panel .loeft-stats{grid-column:2;grid-row:2}
+}
+/* Ordre 375 (Q7): figurerne i kapitel 3, 6 og 7 er beskåret til selve tegningen (scripts/figurer-telefon.mjs),
+   så deres tekst kan læses på en telefon. Tallene står i HTML ved siden af. */
+.article-figure.anatomi-figur img,.article-figure.fejlbillede-figur img{width:auto;max-width:100%;max-height:420px;margin:0 auto}
+.mom-fig img{width:auto;height:440px;max-width:100%}
+.fase-figur .fig-tekst{font-size:15px}
+/* Ordre 388: kapitel 1 og 5 er Yantras egne figurer (assets/squat-figurer/, beskåret af scripts/figurer-telefon.mjs) som billeder i stedet for inline-SVG. De vises i egen bredde (1:1, kapitel 5 er 306 px), højst kolonnens, så mærkerne er mindst 9 px. */
+.fase-figur img{display:block;width:auto;max-width:100%;height:auto;margin:0 auto}
+.fejl-moment{width:100%;max-width:420px;margin:1rem auto 0;border-collapse:collapse;font-family:var(--mono);font-size:.74rem;font-variant-numeric:tabular-nums}
+.fejl-moment caption{caption-side:bottom;text-align:left;padding-top:.5rem;color:var(--ink4);font-size:.66rem;line-height:1.55}
+.fejl-moment th,.fejl-moment td{padding:.35rem .4rem;border-bottom:1px solid var(--border);color:var(--ink2);text-align:right}
+.fejl-moment thead th{color:var(--ink3);font-weight:500;font-size:.6rem;letter-spacing:.04em;text-transform:uppercase}
+.fejl-moment tbody th,.fejl-moment thead th:first-child{text-align:left;font-weight:400}
+.anatomi-legende{display:flex;flex-wrap:wrap;gap:.35rem 1.1rem;list-style:none;margin:1.5rem 0 .4rem;padding:0;font-size:.8rem;color:var(--ink2)}
+.anatomi-legende li{display:flex;align-items:center;gap:.45rem}
+.anatomi-legende .streg{display:inline-block;width:22px;height:4px;border-radius:2px;background:var(--f)}
+.article-body .anatomi-legende-note{font-size:.8rem;line-height:1.6;color:var(--ink3)}
+/* Ordre 398 (N2): kapitel 5's figurer er 306 px brede med 12 px mærker. På desktop får de deres egen bredde i stedet for kapitel 1's 230 px, så mærkerne ikke skrumper til 9 px. */
+@media(min-width:701px){#kap-stang .fase-figur{grid-template-columns:306px minmax(0,1fr)}}
+/* Ordre 407: kapitel 7's to hyppigste fejl (Yantras k7-figurer) er 255 px brede med 12 px mærker og får samme behandling. */
+@media(min-width:701px){#kap-fejlbilleder .fase-figur{grid-template-columns:255px minmax(0,1fr)}}
+/* Ordre 398 (Q21): kapitel 6's indlejring får telefonens trykflade på knapperne. F8 (forklaringen i canvas er 6-7 px på 390) er ikke rettet her: forklaring og figur ligger i hver sin side af samme canvas, så canvas kan hverken skaleres op eller rulles uden at skære figuren. */
+#maalt-over-model-mount .mom button{min-height:44px}
+
+/* Ordre 405: finde rundt paa telefonen. "Til toppen af kapitlet" staar i HTML og virker uden JavaScript. */
+.article-body .kap-top{margin:2rem 0 0;text-align:right}
+.kap-top a{display:inline-flex;align-items:center;min-height:44px;padding:0 .25rem;font:500 .62rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);text-decoration:none}
+.kap-top a::before{content:'\2191';margin-right:.5rem;color:var(--amber);font-size:.8rem}
+.kap-top a:hover{color:var(--ink)}
+.toc .toc-min{margin-left:auto;padding-left:.75rem;flex:none;font:.6rem var(--mono);color:var(--ink4)}
+
+/* Kapitelmenuen er et tillaeg, som scriptet i siden bygger ud fra indholdsfortegnelsen: en fast knap nederst
+   paa smal skaerm, der aabner listen, og en fast kolonne i venstre side paa bred skaerm. Kapitlet man er i, er markeret. */
+.kapmenu-knap{position:fixed;right:1rem;bottom:1rem;z-index:3;display:flex;align-items:center;gap:.6rem;min-height:48px;padding:0 1rem;background:var(--bg2);border:1px solid var(--border2);border-left:2px solid var(--amber);border-radius:4px;box-shadow:0 6px 24px rgba(0,0,0,.45);font:500 .62rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--amber);cursor:pointer}
+.kapmenu-knap .kapmenu-nr{color:var(--ink2);letter-spacing:.04em}
+.kapmenu-knap:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.kapmenu{position:fixed;right:1rem;bottom:4.5rem;z-index:3;width:min(22rem,calc(100vw - 2rem));max-height:calc(100vh - 7.5rem);max-height:calc(100dvh - 7.5rem);overflow-y:auto;overscroll-behavior:contain;background:var(--bg2);border:1px solid var(--border2);border-left:2px solid var(--amber);border-radius:4px;box-shadow:0 10px 32px rgba(0,0,0,.55)}
+.kapmenu[hidden]{display:none}
+.kapmenu-titel{padding:.9rem 1rem .4rem;font:500 .58rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.kapmenu ol{list-style:none;margin:0;padding:0 1rem .5rem}
+.kapmenu li{border-top:1px solid var(--border)}
+.kapmenu a{display:flex;align-items:center;gap:.75rem;min-height:44px;padding:.3rem 0;color:var(--ink2);text-decoration:none;font-size:.88rem;line-height:1.35}
+.kapmenu .kapmenu-n{flex:none;width:1.4rem;font:.6rem var(--mono);color:var(--amber)}
+.kapmenu .toc-min{margin-left:auto;padding-left:.75rem;flex:none;font:.6rem var(--mono);color:var(--ink4)}
+.kapmenu li.toc-ekstra a{font-size:.8rem;color:var(--ink3)}
+.kapmenu a:hover{color:var(--ink)}
+.kapmenu a:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.kapmenu a[aria-current="true"]{color:var(--ink);font-weight:500;box-shadow:inset 2px 0 0 var(--amber);padding-left:.6rem;margin-left:-.6rem}
+@media(min-width:1240px){
+  .kapmenu-knap{display:none}
+  .kapmenu,.kapmenu[hidden]{display:block;top:88px;bottom:auto;left:1.5rem;right:auto;width:calc((100vw - 720px) / 2 - 3rem);max-width:17rem;max-height:calc(100vh - 112px);background:none;border:0;border-left:1px solid var(--border2);border-radius:0;box-shadow:none}
+  .kapmenu a{font-size:.8rem}
+  .kapmenu a[aria-current="true"]{box-shadow:inset 2px 0 0 var(--amber)}
+}
+/* Tre-løft-figuren (løftmodellen, dist/tre-loeft) i kapitel 4; højden sættes af siden selv via postMessage */
+.tre-loeft-ramme{display:block;width:100%;height:1000px;margin:0 0 1.75rem;border:1px solid var(--border);background:#141410}
+/* Ordre 477: Min krop, kort udgave (løftmodellen, dist/min-krop/kort.html), samme ramme; højden sættes via postMessage */
+.min-krop-ramme{display:block;width:100%;height:980px;margin:0 0 1.75rem;border:1px solid var(--border);background:#141410}
+/* Ordre 473: link i broedteksten (Min krop fra kapitel 4), som footerens links: tekstfarve og understregning */
+.article-body p:not(.kap-top) a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:3px}
+.article-body p:not(.kap-top) a:hover{text-decoration-color:var(--ink)}
+@media print{.kapmenu,.kapmenu-knap{display:none}}
+/* Referencerne bag modellens momentarme står for sig under referencerne. */
+.references .references-label-model{margin-top:2rem}
+/* Ordre 655: traad 1. Faserne som een raekke figurer i "Det der ligger fast", fodderne paa samme linje, og figurer inde i "Gaa dybere". */
+.fase-raekke{margin:1.25rem 0 1.5rem;padding:1rem;background:var(--bg2);border:1px solid var(--border)}
+.fase-raekke-billeder{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.5rem;align-items:end}
+.fase-raekke-billeder>div{display:flex;flex-direction:column;align-items:center;gap:.4rem}
+.fase-raekke-billeder img{display:block;width:100%;max-width:130px;height:auto}
+.fase-raekke-billeder span{font:500 .56rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);text-align:center}
+.fase-raekke figcaption{margin-top:.9rem;font-size:.78rem;line-height:1.65;color:var(--ink4)}
+.fase-raekke figcaption strong{color:var(--ink3);font-weight:500}
+@media(max-width:700px){.fase-raekke{padding:.6rem .4rem}.fase-raekke-billeder{gap:.2rem}.fase-raekke-billeder span{font-size:.5rem;letter-spacing:0}}
+.dybere dd .dybere-figur{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;margin:.75rem auto 0;background:var(--bg)}
+.dybere dd .dybere-figur-smal{max-width:345px}
+
+/* Ordre 1005: figurer fra loeftmodellen (artikel-v1) som rækker af webp-billeder. To eller tre ved siden af hinanden på bred skærm, under hinanden på telefon, så mærkerne i tegningerne kan læses. */
+.fig-par-rad{display:flex;gap:1rem;justify-content:center;align-items:flex-start}
+.fig-par-rad img{flex:1 1 0;min-width:0;width:100%;height:auto;max-height:520px;object-fit:contain}
+.fig-par.fig-en .fig-par-rad img{flex:0 1 320px}
+@media(max-width:600px){
+  .fig-par-rad{flex-direction:column;align-items:center}
+  .fig-par-rad img{flex:none;width:auto;max-width:100%;max-height:420px}
+}
