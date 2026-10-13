@@ -93,7 +93,7 @@
         <summary>Spredningen mellem personer</summary>
         <div class="fold-indhold">
           <h4>Studiet</h4>
-          <p>Ahtiainen m.fl. samlede tidligere indsamlede data fra 287 raske, utrænede mænd og kvinder i alderen 19 til 78 år, heraf 72 kontroller. Styrken steg i gennemsnit 21,1 ± 11,5 %, med spredning fra minus 8 til 60 %. Responsen varierede meget uanset alder og køn.</p>
+          <p>Ahtiainen m.fl. samlede tidligere indsamlede data fra 287 raske, utrænede mænd og kvinder i alderen 19 til 78 år, der trænede, og 72 kontroller, der ikke trænede. Styrken steg i gennemsnit 21,1 ± 11,5 %, med spredning fra minus 8 til 60 %. Responsen varierede meget uanset alder og køn.</p>
           <span class="kilde">Ahtiainen m.fl. (2016).</span>
           <h4>Hvad studiet ikke viser</h4>
           <p>Studiet siger ikke, hvor stor spredningen er hos styrkeløftere, og det siger ikke, hvorfor den enkelte reagerer, som hun gør.</p>
@@ -169,7 +169,7 @@
       <h2 id="h-blok"><span class="kap-nr">05</span>Strukturen over tid</h2>
       <p class="svar">Struktur hjælper lidt. Litteraturen siger ikke, hvilken struktur en bestemt løfter skal have.</p>
       <p>I en meta-analyse af 18 studier gav periodiseret træning en større fremgang i maksimal styrke end ikke-periodiseret (effektstørrelse 0,43), og undulerende modeller så ud til at være gunstigere. Fremgangen var større hos utrænede (Williams m.fl., 2017). For muskelvækst var der ingen forskel mellem lineær og daglig undulerende periodisering (Grgic m.fl., 2017). Ingen af de gennemgåede studier viser, at en bestemt blokopbygning giver mere styrke end en anden hos styrkeløftere.</p>
-      <p class="proev"><strong>Prøv og mærk.</strong> Skriv for hver uge i en blok ét ord: volumen eller belastning. Står der det samme ord alle ugerne, er det ikke en blok med en tydelig opgave.</p>
+      <p class="proev"><strong>Prøv og mærk.</strong> Et praktisk planlægningsforslag: skriv for hver uge i en blok, hvad fokus er, hvordan progressionen ser ud, og hvad der skal til, før dosis ændres. Samme fokus alle ugerne kan godt være en tydelig blok, når progressionen og kriterierne er skrevet ned.</p>
 
       <details class="fold">
         <summary>Periodisering i litteraturen</summary>
@@ -214,7 +214,7 @@
       <div class="fold-tabel">
         <table class="fyld">
           <caption>Udfyldes sammen med atleten. Længden af blokken og belastningen afhænger af, hvor atleten er i sin træning, og hvad der arbejdes på.</caption>
-          <thead><tr><th scope="col">Periode</th><th scope="col">Opgave</th><th scope="col">Volumen eller belastning</th><th scope="col">Hovedløft</th><th scope="col">Støtteøvelser</th></tr></thead>
+          <thead><tr><th scope="col">Periode</th><th scope="col">Opgave</th><th scope="col">Progression og kriterium</th><th scope="col">Hovedløft</th><th scope="col">Støtteøvelser</th></tr></thead>
           <tbody><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody>
         </table>
       </div>
@@ -230,7 +230,7 @@
       <h3 class="vaerktoej">Tjekliste før et program afleveres</h3>
       <ul class="tjek">
         <li><label><input type="checkbox"><span>Profilen af atleten er opdateret.</span></label></li>
-        <li><label><input type="checkbox"><span>Hver uge har en opgave: volumen eller belastning.</span></label></li>
+        <li><label><input type="checkbox"><span>Hver uge har et beskrevet fokus, en progression og et kriterium for at ændre dosis.</span></label></li>
         <li><label><input type="checkbox"><span>Antallet af støtteøvelser svarer til det, atleten gennemfører.</span></label></li>
         <li><label><input type="checkbox"><span>Faste præferencer og udstyr er respekteret.</span></label></li>
         <li><label><input type="checkbox"><span>Deload og blokskifte er aftalt med atleten og er ikke bygget af skabelonen.</span></label></li>
@@ -266,7 +266,7 @@
 
   <div class="note" id="forbehold">
     <div class="note-label">Forbehold</div>
-    <p>Artiklen er en gennemgang af udvalgte studier og er ikke et program til en bestemt løfter. Studierne er lavet på mænd, i flere tilfælde utrænede eller med almene træningsmål, og de beskriver gennemsnit. Ingen af de gennemgåede studier viser, at en bestemt blokopbygning giver mere styrke end en anden hos styrkeløftere. Et program til en bestemt atlet kan kun vurderes af en, der ser hendes træning.</p>
+    <p>Artiklen er en gennemgang af udvalgte studier og er ikke et program til en bestemt løfter. Deltagergrupper og træningserfaring varierer mellem studierne: flere omfatter trænede mænd, mens Ahtiainen m.fl. omfatter utrænede mænd og kvinder, og flere har almene træningsmål. Studierne beskriver gennemsnit. Ingen af de gennemgåede studier viser, at en bestemt blokopbygning giver mere styrke end en anden hos styrkeløftere. Et program til en bestemt atlet kan kun vurderes af en, der ser hendes træning.</p>
   </div>
 
   <a href="viden.html#artikler" class="article-next">
@@ -296,6 +296,7 @@
   var toc = document.getElementById('toc');
   if (!toc) return;
   var bred = window.matchMedia('(min-width: 900px)');
+  var roligt = window.matchMedia('(prefers-reduced-motion: reduce)');
   toc.open = bred.matches;
   toc.addEventListener('click', function (e) {
     var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
@@ -304,7 +305,10 @@
     if (!mål) return;
     e.preventDefault();
     toc.open = false;
-    mål.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    mål.scrollIntoView({ behavior: roligt.matches ? 'auto' : 'smooth', block: 'start' });
+    var overskrift = mål.querySelector('h2, .references-label') || mål;
+    if (!overskrift.hasAttribute('tabindex')) overskrift.setAttribute('tabindex', '-1');
+    overskrift.focus({ preventScroll: true });
     if (history.replaceState) history.replaceState(null, '', '#' + mål.id);
   });
 })();
