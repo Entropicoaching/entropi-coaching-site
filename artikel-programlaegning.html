@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Programlægning for styrkeløft: at bygge en blok ud fra atleten, ikke ud fra skabelonen | Entropi Coaching</title>
+<meta name="description" content="Seks punkter om at starte med atleten, vælge øvelser og prioritere, dosere volumen og intensitet, bygge en blok og afgøre, hvornår der skal deloades.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#141410">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/artikel-skabelon.css">
+<link rel="stylesheet" href="assets/artikel-opslag.css">
+<style>
+.fold{margin:2rem 0 0;background:var(--bg2);border:1px solid var(--border2);border-radius:4px}
+.fold summary{display:flex;align-items:center;gap:.6rem;min-height:44px;padding:.5rem 1rem;cursor:pointer;list-style:none;font:500 .66rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.fold summary::-webkit-details-marker{display:none}
+.fold summary::before{content:'+';color:var(--amber);font-size:.9rem}
+.fold[open] summary::before{content:'\2212'}
+.fold summary:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.fold-indhold{padding:0 1rem 1rem}
+.article-body .fold-indhold h4{font:500 .62rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin:1.5rem 0 .4rem}
+.article-body .fold-indhold p{font-size:.9rem;line-height:1.8;margin-bottom:.9rem;overflow-wrap:anywhere}
+.article-body .fold-indhold .kilde{display:block;font-size:.76rem;line-height:1.6;color:var(--ink4);margin-top:-.4rem;margin-bottom:1rem}
+.fold-tabel{overflow-x:auto;margin:.5rem 0 1.25rem}
+.fold-tabel table{border-collapse:collapse;width:100%;min-width:520px;font-size:.82rem;line-height:1.5}
+.fold-tabel caption{caption-side:top;text-align:left;font-size:.76rem;color:var(--ink4);padding-bottom:.5rem}
+.fold-tabel th,.fold-tabel td{text-align:left;vertical-align:top;padding:.45rem .6rem;border-bottom:1px solid var(--border2);color:var(--ink2);font-weight:400}
+.fold-tabel thead th{font:500 .6rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+.fig-skitse{margin:2rem 0;padding:1.25rem;background:var(--bg2);border:1px solid var(--border)}
+.fig-skitse svg{display:block;width:100%;max-width:460px;height:auto;margin:0 auto}
+.fig-skitse figcaption{margin-top:.85rem;font-size:.78rem;line-height:1.65;color:var(--ink4)}
+.fig-skitse figcaption strong{color:var(--ink3);font-weight:500}
+.tjek{list-style:none;margin:0 0 1.5rem;padding:0}
+.article-body .tjek li{padding:0;margin:0;border-bottom:1px solid var(--border2)}
+.tjek label{display:flex;align-items:flex-start;gap:.75rem;min-height:44px;padding:.7rem .25rem;cursor:pointer;color:var(--ink2);line-height:1.7;font-size:.95rem}
+.tjek input{flex:none;width:1.1rem;height:1.1rem;margin-top:.35rem;accent-color:var(--amber)}
+.tjek input:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.trin{margin:0 0 1.5rem 1.4rem;padding:0;color:var(--ink2)}
+.trin li{padding:.3rem 0 .3rem .35rem;line-height:1.8}
+.article-body h3.vaerktoej{font:500 .66rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin:2.5rem 0 .75rem}
+.fyld td{height:2.2rem;min-width:3.5rem}
+.proev{padding-left:1rem;border-left:2px solid var(--border2)}
+.proev strong{color:var(--ink);font-weight:500}
+@media (max-width:480px){.fig-skitse{padding:.75rem}.fold-indhold{padding:0 .85rem .85rem}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Entropi<span>.</span></a>
+  <a href="artikler.html" class="nav-back">&lt; Artikler</a>
+</nav>
+<main class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-tag">Programmering</span>
+    <div class="meta-divider"></div>
+    <span class="meta-date">2026</span>
+    <div class="meta-divider"></div>
+    <span class="meta-read">5 min. læsning</span>
+  </div>
+
+  <h1 class="article-title">Programlægning for styrkeløft:<br><em>at bygge en blok ud fra atleten, ikke ud fra skabelonen.</em></h1>
+
+  <div class="article-body">
+
+    <p class="svar">Det styrende spørgsmål i et program er, hvad der gør atleten stærkere. Svaret afhænger af atleten, og litteraturen dækker kun dele af det.</p>
+
+    <div role="navigation" aria-label="Indhold">
+      <details class="toc" id="toc">
+        <summary>Indhold</summary>
+        <ol>
+          <li><a href="#kap-atlet">Begynd med atleten</a></li>
+          <li><a href="#kap-valg">Øvelsesvalg og prioritering</a></li>
+          <li><a href="#kap-dosis">Dosis: volumen og frekvens</a></li>
+          <li><a href="#kap-intensitet">Belastning og nærhed til udmattelse</a></li>
+          <li><a href="#kap-blok">Strukturen over tid</a></li>
+          <li><a href="#kap-deload">Deload, taper og stævne</a></li>
+          <li class="toc-ekstra"><a href="#kap-handleplan">Handleplan: tre værktøjer</a></li>
+          <li class="toc-ekstra"><a href="#referencer">Referencer</a></li>
+        </ol>
+      </details>
+    </div>
+
+    <section class="kapitel" id="kap-atlet" aria-labelledby="h-atlet">
+      <h2 id="h-atlet"><span class="kap-nr">01</span>Begynd med atleten</h2>
+      <p class="svar">Et program starter i en profil af atleten, ikke i en skabelon.</p>
+      <p>Atleter reagerer forskelligt på den samme træning. I en gruppe på 287 utrænede voksne varierede styrkegevinsten fra et fald på 8 % til en stigning på 60 % (Ahtiainen m.fl., 2016). Deltagerne var ikke løftere, men spredningen viser, at det, der virkede for én, ikke fortæller, hvad der virker for den næste.</p>
+      <p class="proev"><strong>Prøv og mærk.</strong> Skriv det, du ved om atleten, på én side, før næste blok tegnes: mål, stævne, udstyr, skader, øvelser hun ikke skal have og de dage, hun kan træne. Det, du ikke kan svare på uden at gætte, er det, du skal spørge atleten om først.</p>
+
+      <details class="fold">
+        <summary>Spredningen mellem personer</summary>
+        <div class="fold-indhold">
+          <h4>Studiet</h4>
+          <p>Ahtiainen m.fl. samlede tidligere indsamlede data fra 287 raske, utrænede mænd og kvinder i alderen 19 til 78 år, heraf 72 kontroller. Styrken steg i gennemsnit 21,1 ± 11,5 %, med spredning fra minus 8 til 60 %. Responsen varierede meget uanset alder og køn.</p>
+          <span class="kilde">Ahtiainen m.fl. (2016).</span>
+          <h4>Hvad studiet ikke viser</h4>
+          <p>Studiet siger ikke, hvor stor spredningen er hos styrkeløftere, og det siger ikke, hvorfor den enkelte reagerer, som hun gør.</p>
+          <span class="kilde">Ahtiainen m.fl. (2016): deltagerne var utrænede.</span>
+        </div>
+      </details>
+      <p class="kap-top"><a href="#kap-atlet">Til toppen af kapitlet</a></p>
+    </section>
+
+    <section class="kapitel" id="kap-valg" aria-labelledby="h-valg">
+      <h2 id="h-valg"><span class="kap-nr">02</span>Øvelsesvalg og prioritering</h2>
+      <p class="svar">Hovedløftene kommer først. Få øvelser, der bliver kørt, er bedre end mange, der ikke bliver det.</p>
+      <p>Marc Schlichting prioriterer hovedløftene først og vælger hellere få støtteøvelser, som atleten faktisk gennemfører, end mange, hun ikke når. Det er en coachvurdering og ikke en litteraturpåstand. Litteraturen taler heller ikke imod den: i et studie med 21 trænede mænd gav tilfældigt skiftende øvelser samme fremgang i maksimal styrke som faste øvelser, men højere motivation (Baz-Valle m.fl., 2019). Variation er altså ikke en forudsætning for styrkefremgang i det studie.</p>
+      <p class="proev"><strong>Prøv og mærk.</strong> Tæl i de seneste uger, hvor mange af de planlagte øvelser ud over hovedløftene der faktisk blev gennemført. Det tal er et sted at begynde, når næste blok planlægges.</p>
+
+      <details class="fold">
+        <summary>Øvelsesvariation i studiet</summary>
+        <div class="fold-indhold">
+          <h4>Studiet</h4>
+          <p>21 trænede mænd blev fordelt tilfældigt på otte ugers træning med faste øvelser eller med øvelser, der skiftede tilfældigt fra gang til gang. Begge grupper fik store fremgange i 1RM i bænkpres og squat uden forskel mellem grupperne. Gruppen med skiftende øvelser rapporterede højere motivation til at træne.</p>
+          <span class="kilde">Baz-Valle m.fl. (2019).</span>
+          <h4>Hvad der ikke er undersøgt</h4>
+          <p>Studiet siger ikke noget om, hvilke støtteøvelser der gør et bestemt løft stærkere hos en bestemt løfter. Valget af øvelser, der rammer et svagt punkt, er en coachvurdering.</p>
+          <span class="kilde">Kildekritik: ingen kilde for valg af støtteøvelse.</span>
+        </div>
+      </details>
+      <p class="kap-top"><a href="#kap-valg">Til toppen af kapitlet</a></p>
+    </section>
+
+    <section class="kapitel" id="kap-dosis" aria-labelledby="h-dosis">
+      <h2 id="h-dosis"><span class="kap-nr">03</span>Dosis: volumen og frekvens</h2>
+      <p class="svar">Volumen og frekvens er en dosis og ikke et mål i sig selv. Mere giver ikke altid mere styrke.</p>
+      <p>I et studie af 34 trænede mænd gav ét, tre og fem sæt pr. øvelse pr. træning stigende muskelvækst med stigende volumen, men styrkefremgangen var ens (Schoenfeld m.fl., 2019). Der findes også forskning i den mindste dosis, der stadig flytter 1RM hos styrkeløftere: et arbejde med flere delstudier med eliteløftere, trænere og løftere på middel til avanceret niveau (Androulakis-Korakakis m.fl., 2021). Studierne giver ikke en dosis til en bestemt løfter. Hvad hun kan restituere sig fra, afhænger af, hvor hun er i sin træning, og hvad der arbejdes på.</p>
+      <p>Hvad volumen og frekvens hver især gør, står i artiklen om volumen og artiklen om frekvens.</p>
+      <p class="proev"><strong>Prøv og mærk.</strong> Notér, hvor meget arbejde atleten har klaret uden at gå glip af sæt, og lad det være udgangspunktet. Hæv først, når det er gennemført over en periode, der svarer til hendes situation.</p>
+
+      <details class="fold">
+        <summary>Studierne bag</summary>
+        <div class="fold-indhold">
+          <h4>Mere volumen, samme styrke</h4>
+          <p>34 trænede mænd trænede i otte uger med ét, tre eller fem sæt pr. øvelse. Muskelvæksten steg med volumen, men fremgangen i styrke gjorde ikke.</p>
+          <span class="kilde">Schoenfeld m.fl. (2019).</span>
+          <h4>Mindste effektive dosis</h4>
+          <p>Arbejdet samler interview med eliteløftere og trænere, en undersøgelse af trænere og atleter, to træningsstudier med løftere på middel til avanceret niveau og en spørgeskemaundersøgelse med konkurrenceløftere. Tal for selve dosis er ikke gengivet her, fordi de afhænger af delstudiet og af, hvem der trænede.</p>
+          <span class="kilde">Androulakis-Korakakis m.fl. (2021).</span>
+        </div>
+      </details>
+      <p class="kap-top"><a href="#kap-dosis">Til toppen af kapitlet</a></p>
+    </section>
+
+    <section class="kapitel" id="kap-intensitet" aria-labelledby="h-intensitet">
+      <h2 id="h-intensitet"><span class="kap-nr">04</span>Belastning og nærhed til udmattelse</h2>
+      <p class="svar">For muskelvækst har nærheden til udmattelse betydning. For styrke fandt en stor analyse ikke en tydelig sammenhæng.</p>
+      <p>I en række meta-regressioner af, hvor tæt på udmattelse sættene sluttede, påvirkede nærheden ikke styrkefremgangen nævneværdigt. For muskelvækst var det bedre at slutte sættene tættere på udmattelse (Robinson m.fl., 2024). Nærheden er desuden et skøn og ikke en måling, og skønnet kan være flere gentagelser forkert (Steele m.fl., 2017). Studierne er lavet på almindelige sæt, og der er ikke fundet en kilde for tunge singler og doubler hos styrkeløftere.</p>
+      <p>Hvordan RPE bruges, står i artiklen om intensitet.</p>
+      <p class="proev"><strong>Prøv og mærk.</strong> Skriv ud for hvert hovedløft, hvad ugens opgave er: at øve en tung belastning eller at samle mange gentagelser. Lad ikke alle dage have begge dele.</p>
+
+      <details class="fold">
+        <summary>Meta-regressionerne</summary>
+        <div class="fold-indhold">
+          <h4>Hvad de viste</h4>
+          <p>Robinson m.fl. lavede en serie meta-regressioner med estimeret nærhed til udmattelse (gentagelser i reserve) som forklarende variabel. Styrkefremgangen blev ikke nævneværdigt påvirket af gentagelser i reserve. For muskelvækst var det bedre at slutte sættene tættere på udmattelse. Forfatterne skriver, at gentagelser i reserve er estimeret ud fra beskrivelserne i de enkelte studier.</p>
+          <span class="kilde">Robinson m.fl. (2024).</span>
+          <h4>Skønnet er upræcist</h4>
+          <p>Deltagerne undervurderede i gennemsnit, hvor mange gentagelser de havde tilbage, og skønnet blev bedre med træningserfaring.</p>
+          <span class="kilde">Steele m.fl. (2017).</span>
+        </div>
+      </details>
+      <p class="kap-top"><a href="#kap-intensitet">Til toppen af kapitlet</a></p>
+    </section>
+
+    <section class="kapitel" id="kap-blok" aria-labelledby="h-blok">
+      <h2 id="h-blok"><span class="kap-nr">05</span>Strukturen over tid</h2>
+      <p class="svar">Struktur hjælper lidt. Litteraturen siger ikke, hvilken struktur en bestemt løfter skal have.</p>
+      <p>I en meta-analyse af 18 studier gav periodiseret træning en større fremgang i maksimal styrke end ikke-periodiseret (effektstørrelse 0,43), og undulerende modeller så ud til at være gunstigere. Fremgangen var større hos utrænede (Williams m.fl., 2017). For muskelvækst var der ingen forskel mellem lineær og daglig undulerende periodisering (Grgic m.fl., 2017). Ingen af de gennemgåede studier viser, at en bestemt blokopbygning giver mere styrke end en anden hos styrkeløftere.</p>
+      <p class="proev"><strong>Prøv og mærk.</strong> Skriv for hver uge i en blok ét ord: volumen eller belastning. Står der det samme ord alle ugerne, er det ikke en blok med en tydelig opgave.</p>
+
+      <details class="fold">
+        <summary>Periodisering i litteraturen</summary>
+        <div class="fold-indhold">
+          <h4>Periodiseret mod ikke-periodiseret</h4>
+          <p>81 effekter fra 18 studier udgivet mellem 1988 og 2015 indgik. Periodiseret træning gav større fremgang i 1RM end ikke-periodiseret, med en effektstørrelse på 0,43 (95 % konfidensinterval 0,27 til 0,58). Fremgangen var større hos utrænede, og undulerende modeller så ud til at være gunstigere.</p>
+          <span class="kilde">Williams m.fl. (2017).</span>
+          <h4>Lineær mod undulerende</h4>
+          <p>13 studier af muskelvækst. Forskellen mellem lineær og daglig undulerende periodisering var tæt på nul (d = minus 0,02, konfidensinterval minus 0,25 til 0,21).</p>
+          <span class="kilde">Grgic m.fl. (2017).</span>
+        </div>
+      </details>
+      <p class="kap-top"><a href="#kap-blok">Til toppen af kapitlet</a></p>
+    </section>
+
+    <section class="kapitel" id="kap-deload" aria-labelledby="h-deload">
+      <h2 id="h-deload"><span class="kap-nr">06</span>Deload, taper og stævne</h2>
+      <p class="svar">Deload og blokskifte aftales med atleten. De bygges ikke af en skabelon.</p>
+      <p>En deload er en planlagt periode med mindre træningsbelastning. Enigheden om, hvad den er, bygger på en konsensusundersøgelse blandt trænere og ikke på en målt effekt (Bell m.fl., 2023). Før et stævne bruges i stedet en taper. I en meta-analyse af 27 studier gav to uger med volumen nedsat med 41 til 60 % og uændret intensitet og frekvens den største effekt (Bosquet m.fl., 2007). Det er ikke en meta-analyse af styrkeløftere, og om løftere indgår, er ikke kontrolleret.</p>
+      <p>Hvad en deload er, og hvornår den giver mening, står i artiklen om deload.</p>
+      <p class="proev"><strong>Prøv og mærk.</strong> Står vægten stille, så skriv mulige grunde ned, før blokken ændres: søvn og stress, teknik og hvor meget af planen der faktisk blev gennemført.</p>
+
+      <details class="fold">
+        <summary>Deload og taper i studierne</summary>
+        <div class="fold-indhold">
+          <h4>Deload</h4>
+          <p>Bell m.fl. samlede 34, 29 og 21 trænere i tre runder til en konsensus om deload i styrke- og kropsbygningssport. Resultatet er enighed blandt eksperter, ikke et mål for effekt.</p>
+          <span class="kilde">Bell m.fl. (2023).</span>
+          <h4>Taper</h4>
+          <p>27 studier. Den største effekt kom af to uger, hvor volumen blev sat ned med 41 til 60 %, mens intensitet og frekvens blev holdt uændret. Der er ikke fundet en tilsvarende kilde, der kun gælder styrkeløftere.</p>
+          <span class="kilde">Bosquet m.fl. (2007).</span>
+        </div>
+      </details>
+      <p class="kap-top"><a href="#kap-deload">Til toppen af kapitlet</a></p>
+    </section>
+
+    <section class="kapitel" id="kap-handleplan" aria-labelledby="h-handleplan">
+      <h2 id="h-handleplan">Handleplan</h2>
+      <p class="svar">Tre værktøjer: en skabelon til en blok, spørgsmål til øvelsesvalg og prioritering, og en tjekliste før et program afleveres.</p>
+
+      <h3 class="vaerktoej">Skabelon til en blok</h3>
+      <div class="fold-tabel">
+        <table class="fyld">
+          <caption>Udfyldes sammen med atleten. Længden af blokken og belastningen afhænger af, hvor atleten er i sin træning, og hvad der arbejdes på.</caption>
+          <thead><tr><th scope="col">Periode</th><th scope="col">Opgave</th><th scope="col">Volumen eller belastning</th><th scope="col">Hovedløft</th><th scope="col">Støtteøvelser</th></tr></thead>
+          <tbody><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody>
+        </table>
+      </div>
+
+      <h3 class="vaerktoej">Spørgsmål til øvelsesvalg og prioritering</h3>
+      <ol class="trin">
+        <li><strong>Hvad skal hovedløftene have?</strong> Squat, bænkpres og dødløft planlægges først, og resten bagefter.</li>
+        <li><strong>Hvad skal atleten have, og hvad har hun?</strong> Øvelser, hun skal eller ikke skal have, og det udstyr, hun har, kommer før noget nyt.</li>
+        <li><strong>Hvor mange støtteøvelser gennemfører hun?</strong> Antallet sættes ud fra de seneste uger.</li>
+        <li><strong>Hvilket punkt i løftet er set?</strong> En støtteøvelse bør ramme et punkt, der er set i hendes løft.</li>
+      </ol>
+
+      <h3 class="vaerktoej">Tjekliste før et program afleveres</h3>
+      <ul class="tjek">
+        <li><label><input type="checkbox"><span>Profilen af atleten er opdateret.</span></label></li>
+        <li><label><input type="checkbox"><span>Hver uge har en opgave: volumen eller belastning.</span></label></li>
+        <li><label><input type="checkbox"><span>Antallet af støtteøvelser svarer til det, atleten gennemfører.</span></label></li>
+        <li><label><input type="checkbox"><span>Faste præferencer og udstyr er respekteret.</span></label></li>
+        <li><label><input type="checkbox"><span>Deload og blokskifte er aftalt med atleten og er ikke bygget af skabelonen.</span></label></li>
+      </ul>
+      <p class="kap-top"><a href="#kap-handleplan">Til toppen af kapitlet</a></p>
+    </section>
+
+    <div class="references" id="referencer">
+      <div class="references-label">Referencer</div>
+      <p>Ahtiainen, J. P., Walker, S., Peltonen, H., Holviala, J., Sillanpää, E., Karavirta, L., Sallinen, J., Mikkola, J., Valkeinen, H., Mero, A., Hulmi, J. J., &amp; Häkkinen, K. (2016). Heterogeneity in resistance training-induced muscle strength and mass responses in men and women of different ages. <em>Age, 38</em>(1). https://doi.org/10.1007/s11357-015-9870-1</p>
+      <p>Androulakis-Korakakis, P., m.fl. (2021). The minimum effective training dose required for 1RM strength in powerlifters. <em>Frontiers in Sports and Active Living, 3</em>, 713655. https://doi.org/10.3389/fspor.2021.713655</p>
+      <p>Baz-Valle, E., Schoenfeld, B. J., Torres-Unda, J., Santos-Concejero, J., &amp; Balsalobre-Fernández, C. (2019). The effects of exercise variation in muscle thickness, maximal strength and motivation in resistance trained men. <em>PLoS ONE, 14</em>(12), e0226989. https://doi.org/10.1371/journal.pone.0226989</p>
+      <p>Bell, L., Strafford, B. W., Coleman, M., Androulakis Korakakis, P., &amp; Nolan, D. (2023). Integrating deloading into strength and physique sports training programmes: an international Delphi consensus approach. <em>Sports Medicine - Open, 9</em>, 87. https://doi.org/10.1186/s40798-023-00633-0</p>
+      <p>Bosquet, L., m.fl. (2007). Effects of tapering on performance: a meta-analysis. <em>Medicine and Science in Sports and Exercise, 39</em>(8), 1358-1365.</p>
+      <p>Grgic, J., Mikulic, P., Podnar, H., &amp; Pedisic, Z. (2017). Effects of linear and daily undulating periodized resistance training programs on measures of muscle hypertrophy: a systematic review and meta-analysis. <em>PeerJ, 5</em>, e3695. https://doi.org/10.7717/peerj.3695</p>
+      <p>Robinson, Z. P., Pelland, J. C., Remmert, J. F., Refalo, M. C., Jukic, I., Steele, J., &amp; Zourdos, M. C. (2024). Exploring the dose-response relationship between estimated resistance training proximity to failure, strength gain, and muscle hypertrophy: a series of meta-regressions. <em>Sports Medicine, 54</em>(9), 2209-2231.</p>
+      <p>Schoenfeld, B. J., m.fl. (2019). Resistance training volume enhances muscle hypertrophy but not strength in trained men. <em>Medicine and Science in Sports and Exercise, 51</em>(1), 94-103.</p>
+      <p>Steele, J., m.fl. (2017). Ability to predict repetitions to momentary failure is not perfectly accurate, though improves with resistance training experience. <em>PeerJ, 5</em>, e4105.</p>
+      <p>Williams, T. D., Tolusso, D. V., Fedewa, M. V., &amp; Esco, M. R. (2017). Comparison of periodized and non-periodized resistance training on maximal strength: a meta-analysis. <em>Sports Medicine, 47</em>(10), 2083-2100. https://doi.org/10.1007/s40279-017-0734-y</p>
+    </div>
+
+  </div>
+
+  <div class="author-strip">
+    <div class="author-dot">M</div>
+    <div>
+      <div class="author-label">Forfatter</div>
+      <div class="author-name"><a href="om.html">Marc Schlichting</a></div>
+      <div class="author-bio">Stifter af Entropi Coaching. Styrkeløft-coach med 8+ års erfaring.</div>
+    </div>
+  </div>
+
+
+  <div class="note" id="forbehold">
+    <div class="note-label">Forbehold</div>
+    <p>Artiklen er en gennemgang af udvalgte studier og er ikke et program til en bestemt løfter. Studierne er lavet på mænd, i flere tilfælde utrænede eller med almene træningsmål, og de beskriver gennemsnit. Ingen af de gennemgåede studier viser, at en bestemt blokopbygning giver mere styrke end en anden hos styrkeløftere. Et program til en bestemt atlet kan kun vurderes af en, der ser hendes træning.</p>
+  </div>
+
+  <a href="viden.html#artikler" class="article-next">
+    <span><span class="article-next-kicker">Flere artikler</span><span class="article-next-title">Viden om styrkeløft</span><span class="article-next-body">De øvrige artikler om programmering og træning ligger samlet her.</span></span>
+    <span class="article-next-arrow" aria-hidden="true">→</span>
+  </a>
+
+  <a href="artikler.html" class="back-link">Tilbage til artikler</a>
+
+</main>
+<footer>
+  <div><div class="footer-logo">Entropi<span>.</span></div><div class="footer-tagline">Systematisk styrke · data, disciplin &amp; dybde</div></div>
+  <ul class="footer-links">
+    <li><a href="index.html#filosofi">Filosofi</a></li>
+    <li><a href="resultater.html">Resultater</a></li>
+    <li><a href="coaching.html">Coaching</a></li>
+    <li><a href="https://instagram.com/entropicoaching" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+  <div class="footer-contact">
+    <div>Marc Schlichting</div>
+    <a href="mailto:coach@entropicoaching.dk">coach@entropicoaching.dk</a>
+    <div style="margin-top:.4rem;font-size:.62rem;">Entropi Coaching · CVR 46684443<br><a href="privatliv.html">Privatliv</a> · © 2026</div>
+  </div>
+</footer>
+<script>
+(function () {
+  var toc = document.getElementById('toc');
+  if (!toc) return;
+  var bred = window.matchMedia('(min-width: 900px)');
+  toc.open = bred.matches;
+  toc.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a || bred.matches) return;
+    var mål = document.getElementById(a.getAttribute('href').slice(1));
+    if (!mål) return;
+    e.preventDefault();
+    toc.open = false;
+    mål.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (history.replaceState) history.replaceState(null, '', '#' + mål.id);
+  });
+})();
+</script>
+</body>
+</html>
